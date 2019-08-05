@@ -1,0 +1,90 @@
+/**
+  @page TIM_DMA TIM DMA Burst example
+
+  @verbatim
+  ******************** (C) COPYRIGHT 2017 STMicroelectronics *******************
+  * @file    TIM/TIM_DMABurst/Readme.txt 
+  * @author  MCD Application Team
+  * @brief   Description of the TIM DMA example.
+  ******************************************************************************
+  * @attention
+  *
+  * <h2><center>&copy; Copyright (c) 2017 STMicroelectronics.
+  * All rights reserved.</center></h2>
+  *
+  * This software component is licensed by ST under BSD 3-Clause license,
+  * the "License"; You may not use this file except in compliance with the
+  * License. You may obtain a copy of the License at:
+  *                        opensource.org/licenses/BSD-3-Clause
+  *
+  ******************************************************************************
+  @endverbatim
+
+@par Example Description 
+
+Update of the TIMER channel 1 period and duty cycle 
+using the TIMER DMA burst feature.
+
+Every update DMA request, the DMA will do 3 transfers of half words into Timer 
+registers beginning from ARR register.
+On the DMA update request, 0x0FFF will be transferred into ARR, 0x0000 
+will be transferred into RCR, 0x0555 will be transferred into CCR1. 
+
+The TIM1CLK frequency is set to SystemCoreClock (Hz), to get TIM1 counter
+clock at 24 MHz the Prescaler is computed as following:
+- Prescaler = (TIM1CLK / TIM1 counter clock) - 1
+
+SystemCoreClock is set to 120 MHz.
+
+The TIM1 period is 5.8 ms: TIM1 Frequency = TIM1 counter clock/(ARR + 1)
+                                          = 24 MHz / 4096 = 5.8 KHz
+
+The TIM1 CCR1 register value is equal to 0x555, so the TIM1 Channel 1 generates a 
+PWM signal with a frequency equal to 5.8 KHz and a duty cycle equal to 33.33%:
+TIM1 Channel1 duty cycle = (TIM1_CCR1/ TIM1_ARR + 1)* 100 = 33.33%
+
+The PWM waveform can be displayed using an oscilloscope. 
+
+
+@note Care must be taken when using HAL_Delay(), this function provides accurate delay (in milliseconds)
+      based on variable incremented in SysTick ISR. This implies that if HAL_Delay() is called from
+      a peripheral ISR process, then the SysTick interrupt must have higher priority (numerically lower)
+      than the peripheral interrupt. Otherwise the caller ISR process will be blocked.
+      To change the SysTick interrupt priority you have to use HAL_NVIC_SetPriority() function.
+      
+@note The application needs to ensure that the SysTick time base is always set to 1 millisecond
+      to have correct HAL operation.
+
+
+@par Directory contents 
+
+  - TIM/TIM_DMABurst/system_stm32f2xx.c         STM32F2xx system clock configuration file
+  - TIM/TIM_DMABurst/stm32f2xx_hal_conf.h       HAL configuration file
+  - TIM/TIM_DMABurst/stm32f2xx_it.h             Interrupt handlers header file
+  - TIM/TIM_DMA/stm32f2xx_it.c                  Interrupt handlers
+  - TIM/TIM_DMABurst/main.c                     Main program
+  - TIM/TIM_DMABurst/main.h                     Main program header file
+
+
+@par Hardware and Software environment
+
+  - This example runs on STM32F207xx/217xx device.
+    
+  - This example has been tested with STMicroelectronics STM322xG-EVAL  
+    evaluation boards and can be easily tailored to any other supported device and development board
+
+  - STM322xG-EVAL Set-up
+    - Connect the following pins to an oscilloscope to monitor the different
+      waveforms:  
+        - TIM1 CH1 (PA.08: Pin16 in CN3) 
+
+
+@par How to use it ? 
+
+In order to make the program work, you must do the following :
+ - Open your preferred toolchain 
+ - Rebuild all files and load your image into target memory
+ - Run the example
+
+ * <h3><center>&copy; COPYRIGHT STMicroelectronics</center></h3>
+ */

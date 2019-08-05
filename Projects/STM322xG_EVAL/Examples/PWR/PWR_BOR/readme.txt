@@ -1,0 +1,79 @@
+/**
+  @page PWR_BOR PWR Brown Out Reset (BOR) example
+  
+  @verbatim
+  ******************** (C) COPYRIGHT 2017 STMicroelectronics *******************
+  * @file    PWR/PWR_BOR/Readme.txt 
+  * @author  MCD Application Team
+  * @brief   Description of the PWR Brown Out Reset (BOR) example.
+  ******************************************************************************
+  * @attention
+  *
+  * <h2><center>&copy; Copyright (c) 2017 STMicroelectronics.
+  * All rights reserved.</center></h2>
+  *
+  * This software component is licensed by ST under BSD 3-Clause license,
+  * the "License"; You may not use this file except in compliance with the
+  * License. You may obtain a copy of the License at:
+  *                        opensource.org/licenses/BSD-3-Clause
+  *
+  ******************************************************************************
+  @endverbatim
+
+@par Example Description 
+
+This example shows how to configure the programmable BOR thresholds using the 
+FLASH option bytes.
+
+By maintaining the Key push-button pressed at Reset, the new BOR level will be 
+programmed. To modify the BOR threshold, select the voltage range using the 
+appropriate line "#define BOR_LEVEL OB_BOR_XXXX" in main.c file.
+
+STM32 Eval board's LEDs can be used to monitor the example status:
+  - LED1 is toggling to indicate that the reset is released and the system is in RUN
+    mode otherwise the BOR is maintaining the reset
+  - LED3 is ON when there is an error
+
+@note Care must be taken when using HAL_Delay(), this function provides accurate delay (in milliseconds)
+      based on variable incremented in SysTick ISR. This implies that if HAL_Delay() is called from
+      a peripheral ISR process, then the SysTick interrupt must have higher priority (numerically lower)
+      than the peripheral interrupt. Otherwise the caller ISR process will be blocked.
+      To change the SysTick interrupt priority you have to use HAL_NVIC_SetPriority() function.
+      
+@note The application needs to ensure that the SysTick time base is always set to 1 millisecond
+      to have correct HAL operation.
+
+
+@par Directory contents 
+
+  - PWR/PWR_BOR/Inc/stm32f2xx_hal_conf.h     HAL configuration file
+  - PWR/PWR_BOR/Inc/stm32f2xx_it.h           Interrupt handlers header file
+  - PWR/PWR_BOR/Inc/main.h                   header file for main.c
+  - PWR/PWR_BOR/Src/system_stm32f2xx.c       STM32F2xx system clock configuration file
+  - PWR/PWR_BOR/Src/stm32f2xx_it.c           Interrupt handlers
+  - PWR/PWR_BOR/Src/main.c                   Main program
+  - PWR/PWR_BOR/Src/stm32f2xx_hal_msp.c      HAL MSP module
+
+
+@par Hardware and Software environment
+
+  - This example runs on STM32F207xx/217xx device.  
+    
+  - This example has been tested with STMicroelectronics STM322xG-EVAL 
+    evaluation boards and can be easily tailored to any other supported device 
+    and development board.
+
+  - STM322xG-EVAL Set-up
+    - Use LED1 and LED3 connected respectively to PG.06 and PI.09 pins
+    - Use the Key push-button connected to pin PG15 (EXTI_Line15)
+
+
+@par How to use it ? 
+
+In order to make the program work, you must do the following :
+ - Open your preferred toolchain 
+ - Rebuild all files and load your image into target memory
+ - Run the example
+
+ * <h3><center>&copy; COPYRIGHT STMicroelectronics</center></h3>
+ */
