@@ -4551,7 +4551,7 @@ HAL_StatusTypeDef HAL_TIM_ConfigClockSource(TIM_HandleTypeDef *htim, TIM_ClockCo
     case TIM_CLOCKSOURCE_TI1:
     {
       /* Check whether or not the timer instance supports external clock mode 1 */
-      assert_param(IS_TIM_CLOCKSOURCE_TIX_INSTANCE(htim->Instance));
+      assert_param(IS_TIM_CC1_INSTANCE(htim->Instance));
 
       /* Check TI1 input conditioning related parameters */
       assert_param(IS_TIM_CLOCKPOLARITY(sClockSourceConfig->ClockPolarity));
@@ -4567,7 +4567,7 @@ HAL_StatusTypeDef HAL_TIM_ConfigClockSource(TIM_HandleTypeDef *htim, TIM_ClockCo
     case TIM_CLOCKSOURCE_TI2:
     {
       /* Check whether or not the timer instance supports external clock mode 1 (ETRF)*/
-      assert_param(IS_TIM_CLOCKSOURCE_TIX_INSTANCE(htim->Instance));
+      assert_param(IS_TIM_CC2_INSTANCE(htim->Instance));
 
       /* Check TI2 input conditioning related parameters */
       assert_param(IS_TIM_CLOCKPOLARITY(sClockSourceConfig->ClockPolarity));
@@ -4583,7 +4583,7 @@ HAL_StatusTypeDef HAL_TIM_ConfigClockSource(TIM_HandleTypeDef *htim, TIM_ClockCo
     case TIM_CLOCKSOURCE_TI1ED:
     {
       /* Check whether or not the timer instance supports external clock mode 1 */
-      assert_param(IS_TIM_CLOCKSOURCE_TIX_INSTANCE(htim->Instance));
+      assert_param(IS_TIM_CC1_INSTANCE(htim->Instance));
 
       /* Check TI1 input conditioning related parameters */
       assert_param(IS_TIM_CLOCKPOLARITY(sClockSourceConfig->ClockPolarity));
@@ -4602,7 +4602,7 @@ HAL_StatusTypeDef HAL_TIM_ConfigClockSource(TIM_HandleTypeDef *htim, TIM_ClockCo
     case TIM_CLOCKSOURCE_ITR3:
     {
       /* Check whether or not the timer instance supports internal trigger input */
-      assert_param(IS_TIM_CLOCKSOURCE_ITRX_INSTANCE(htim->Instance));
+      assert_param(IS_TIM_CC2_INSTANCE(htim->Instance));
 
       TIM_ITRx_SetConfig(htim->Instance, sClockSourceConfig->ClockSource);
       break;
