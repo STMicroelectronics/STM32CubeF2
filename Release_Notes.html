@@ -5,7 +5,7 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Release Notes for STM32CubeF2 Firmware Package</title>
-  <style type="text/css">
+  <style>
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
       span.underline{text-decoration: underline;}
@@ -63,15 +63,273 @@
 <div class="col-sm-12 col-lg-8">
 <h1 id="update-history">Update History</h1>
 <div class="collapse">
-<input type="checkbox" id="collapse-section8" aria-hidden="true"> <label for="collapse-section8" aria-hidden="true"><strong>V1.8.0 / 26-June-2019</strong></label>
+<input type="checkbox" id="collapse-section8" aria-hidden="true"> <label for="collapse-section8" aria-hidden="true"><strong>V1.9.0 / 31-December-2019</strong></label>
 <div>
 <h1 id="maintenance-release">Maintenance release</h1>
 <h2 id="main-changes">Main Changes</h2>
 <ul>
-<li>General updates to fix known defects and enhancements implementation</li>
-<li>General updates to fix CodeSonar compilation warnings</li>
-<li>General updates to fix the user manual .chm files</li>
-<li><strong>The following changes done on the HAL drivers require an update on the application code based on older HAL versions</strong>
+<li><p>General updates to fix known defects and enhancements implementation</p></li>
+<li><p><strong>HAL</strong></p>
+<ul>
+<li><strong>HAL/LL GPIO</strong> update
+<ul>
+<li>Update GPIO initialization sequence to avoid unwanted pulse on GPIO Pin’s</li>
+</ul></li>
+<li><strong>HAL I2C</strong> update
+<ul>
+<li>Update HAL_I2C_EV_IRQHandler() API to fix I2C send break issue
+<ul>
+<li>Add additional check on hi2c-&gt;hdmatx, hdmatx-&gt;XferCpltCallback, hi2c-&gt;hdmarx, hdmarx-&gt;XferCpltCallback in I2C_Master_SB() API to avoid enabling DMA request when IT mode is used.</li>
+</ul></li>
+<li>Update HAL_I2C_ER_IRQHandler() API to fix acknowledge failure issue with I2C memory IT processes
+<ul>
+<li>Add stop condition generation when NACK occurs.</li>
+</ul></li>
+<li>Update HAL_I2C_Init() API to force software reset before setting new I2C configuration.</li>
+<li>Update HAL I2C processes to report ErrorCode when wrong I2C start condition occurs
+<ul>
+<li>Add new ErrorCode define: HAL_I2C_WRONG_START</li>
+<li>Set ErrorCode parameter in I2C handle to HAL_I2C_WRONG_START</li>
+</ul></li>
+<li>Update I2C_DMAXferCplt(), I2C_DMAError() and I2C_DMAAbort() APIs to fix hardfault issue when hdmatx and hdmarx parameters in i2c handle aren’t initialized (NULL pointer).
+<ul>
+<li>Add additional check on hi2c-&gt;hdmtx and hi2c-&gt;hdmarx before resetting DMA Tx/Rx complete callbacks.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><p><strong>Middleware</strong></p>
+<ul>
+<li>Update to use new version of PDM Library <strong>V3.2.0</strong></li>
+</ul></li>
+<li><p>For the complete list of changes, please refer to the release notes of each firmware component</p></li>
+</ul>
+<h2 id="contents">Contents</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: center;">Version</th>
+<th style="text-align: center;">Licence</th>
+<th style="text-align: center;">Release note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Cortex-M CMSIS</td>
+<td style="text-align: center;">V5.4.0</td>
+<td style="text-align: center;"><a href="Drivers/CMSIS/LICENSE.txt">Apache License 2.0</a></td>
+<td style="text-align: center;"><a href="Drivers/CMSIS/docs/General/html/index.html">release notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32F2xx CMSIS</strong></td>
+<td style="text-align: center;"><strong>V2.2.3</strong></td>
+<td style="text-align: center;"><a href="https://opensource.org/licenses/Apache-2.0">Apache License 2.0</a></td>
+<td style="text-align: center;"><a href="Drivers/CMSIS/Device/ST/STM32F2xx/Release_Notes.html">release notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32F2xx HAL</strong></td>
+<td style="text-align: center;"><strong>V1.2.4</strong></td>
+<td style="text-align: center;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD-3-Clause</a></td>
+<td style="text-align: center;"><a href="Drivers/STM32F2xx_HAL_Driver/Release_Notes.html">release notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BSP STM32F2xx_Nucleo_144</td>
+<td style="text-align: center;">V1.0.2</td>
+<td style="text-align: center;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD-3-Clause</a></td>
+<td style="text-align: center;"><a href="Drivers/BSP/STM32F2xx_Nucleo_144/Release_Notes.html">release notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BSP Adafruit_Shield</td>
+<td style="text-align: center;">V3.0.0</td>
+<td style="text-align: center;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD-3-Clause</a></td>
+<td style="text-align: center;"><a href="Drivers/BSP/Adafruit_Shield/Release_Notes.html">release notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BSP STM322xG-EVAL</td>
+<td style="text-align: center;">V7.0.1</td>
+<td style="text-align: center;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD-3-Clause</a></td>
+<td style="text-align: center;"><a href="Drivers/BSP/STM322xG_EVAL/Release_Notes.html">release notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BSP Components Common</td>
+<td style="text-align: center;">V4.0.1</td>
+<td style="text-align: center;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD-3-Clause</a></td>
+<td style="text-align: center;"><a href="Drivers/BSP/Components/Common/Release_Notes.html">release notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BSP Components cs43l22</td>
+<td style="text-align: center;">V2.0.2</td>
+<td style="text-align: center;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD-3-Clause</a></td>
+<td style="text-align: center;"><a href="Drivers/BSP/Components/cs43l22/Release_Notes.html">release notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BSP Components ili9325</td>
+<td style="text-align: center;">V1.2.3</td>
+<td style="text-align: center;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD-3-Clause</a></td>
+<td style="text-align: center;"><a href="Drivers/BSP/Components/ili9325/Release_Notes.html">release notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BSP Components ili9341</td>
+<td style="text-align: center;">V1.0.2</td>
+<td style="text-align: center;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD-3-Clause</a></td>
+<td style="text-align: center;"><a href="Drivers/BSP/Components/ili9341/Release_Notes.html">release notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BSP Components ili9320</td>
+<td style="text-align: center;">V1.2.2</td>
+<td style="text-align: center;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD-3-Clause</a></td>
+<td style="text-align: center;"><a href="Drivers/BSP/Components/ili9320/Release_Notes.html">release notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BSP Components ov2640</td>
+<td style="text-align: center;">V1.0.2</td>
+<td style="text-align: center;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD-3-Clause</a></td>
+<td style="text-align: center;"><a href="Drivers/BSP/Components/ov2640/Release_Notes.html">release notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BSP Components stmpe811</td>
+<td style="text-align: center;">V2.0.0</td>
+<td style="text-align: center;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD-3-Clause</a></td>
+<td style="text-align: center;"><a href="Drivers/BSP/Components/stmpe811/Release_Notes.html">release notes</a></td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Middlewares</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: center;">Version</th>
+<th style="text-align: center;">Licence</th>
+<th style="text-align: center;">Release note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STemWin</td>
+<td style="text-align: center;">V5.44</td>
+<td style="text-align: center;"><a href="http://www.st.com/SLA0044">SLA0044</a></td>
+<td style="text-align: center;"><a href="Middlewares/ST/STemWin/Release_Notes.html">release notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32 PDM audio software decoding Library</strong></td>
+<td style="text-align: center;"><strong>V3.2.0</strong></td>
+<td style="text-align: center;"><a href="http://www.st.com/SLA0044">SLA0044</a></td>
+<td style="text-align: center;"><a href="Middlewares\ST\STM32_Audio\Addons\PDM\Release_Notes.html">release notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32 USB Device Library</td>
+<td style="text-align: center;">V2.5.3</td>
+<td style="text-align: center;"><a href="http://www.st.com/SLA0044">SLA0044</a></td>
+<td style="text-align: center;"><a href="Middlewares/ST/STM32_USB_Device_Library/Release_Notes.html">release notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32 USB Host Library</td>
+<td style="text-align: center;">V3.3.3</td>
+<td style="text-align: center;"><a href="http://www.st.com/SLA0044">SLA0044</a></td>
+<td style="text-align: center;"><a href="Middlewares/ST/STM32_USB_Host_Library/Release_Notes.html">release notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">FatFS</td>
+<td style="text-align: center;">R0.11</td>
+<td style="text-align: center;"><a href="Middlewares/Third_Party/FatFs/doc/en/appnote.html#license">BSD-3-Clause</a></td>
+<td style="text-align: center;"><a href="Middlewares/Third_Party/FatFS/doc/updates.txt">release notes</a> ST modified 20171117 <a href="Middlewares/Third_Party/FatFs/src/st_readme.txt">release notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">FreeRTOS</td>
+<td style="text-align: center;">V10.0.1</td>
+<td style="text-align: center;"><a href="Middlewares/Third_Party/FreeRTOS/License/license.txt">MIT</a></td>
+<td style="text-align: center;"><a href="Middlewares/Third_Party/FreeRTOS/Source/readme.txt">release notes</a> ST modified <strong>20190329</strong> <a href="Middlewares/Third_Party/FreeRTOS/Source/st_readme.txt">release notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">LibJPEG</td>
+<td style="text-align: center;">V8d</td>
+<td style="text-align: center;"><a href="Middlewares/Third_Party/LibJPEG/README">Independent JPEG Group License</a></td>
+<td style="text-align: center;"><a href="Middlewares\Third_Party\LibJPEG\st_readme.txt">release notes</a> ST modified <strong>20190201</strong> <a href="Middlewares/Third_Party\LibJPEG\st_readme.txt">release notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LwIP</td>
+<td style="text-align: center;">V2.0.3</td>
+<td style="text-align: center;"><a href="Middlewares/Third_Party/LwIP/COPYING">BSD-3-Clause</a></td>
+<td style="text-align: center;"><a href="Middlewares\Third_Party\LwIP\CHANGELOG">release notes</a> ST modified <strong>20180813</strong> <a href="Middlewares\Third_Party\LwIP\st_readme.txt">release notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MbedTLS</td>
+<td style="text-align: center;">V2.14.1</td>
+<td style="text-align: center;"><a href="Middlewares/Third_Party/mbedTLS/apache-2.0.txt">Apache License 2.0</a></td>
+<td style="text-align: center;"><a href="Middlewares\Third_Party\mbedTLS\ChangeLog">release notes</a>ST modified <strong>20190329</strong> <a href="Middlewares\Third_Party\mbedTLS\ChangeLog">release notes</a></td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Utilities</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: center;">Version</th>
+<th style="text-align: center;">License</th>
+<th style="text-align: center;">Release note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">CPU</td>
+<td style="text-align: center;">V1.1.0</td>
+<td style="text-align: center;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD-3-Clause</a></td>
+<td style="text-align: center;"><a href="Utilities/CPU/Release_Notes.html">release notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Fonts</td>
+<td style="text-align: center;">V1.0.0</td>
+<td style="text-align: center;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD-3-Clause</a></td>
+<td style="text-align: center;"><a href="Utilities/Fonts/Release_Notes.html">release notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Log</td>
+<td style="text-align: center;">V1.0.0</td>
+<td style="text-align: center;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD-3-Clause</a></td>
+<td style="text-align: center;"><a href="Utilities/Log/Release_Notes.html">release notes</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="known-limitations">Known Limitations</h2>
+<ul>
+<li>Warnings detected with LibJPEG applications are related to the Libjpeg third party MW stack V8d with System Workbench for STM32 (SW4STM32) V2.9:
+<ul>
+<li>No impact of these warnings on the functional behavior</li>
+</ul></li>
+</ul>
+<h2 id="development-toolchains-and-compilers">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain <strong>V8.20.2</strong>+ ST-Link</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain <strong>V5.26</strong> + ST-LINK</li>
+<li>System Workbench for STM32 (SW4STM32) toolchain <strong>V2.9</strong> + ST-Link</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards">Supported Devices and EVAL boards</h2>
+<ul>
+<li>STM32F217xx/215xx/207xx/205xx devices and STM322xG_EVAL board RevC</li>
+<li>STM32F207ZG and STM32F207ZG-Nucleo board RevB</li>
+</ul>
+<h2 id="backward-compatibility">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section8" aria-hidden="true"> <label for="collapse-section8" aria-hidden="true"><strong>V1.8.0 / 26-June-2019</strong></label>
+<div>
+<h1 id="maintenance-release-1">Maintenance release</h1>
+<h2 id="main-changes-1">Main Changes</h2>
+<ul>
+<li><p>General updates to fix known defects and enhancements implementation</p></li>
+<li><p>General updates to fix CodeSonar compilation warnings</p></li>
+<li><p>General updates to fix the user manual .chm files</p></li>
+<li><p><strong>The following changes done on the HAL drivers require an update on the application code based on older HAL versions</strong></p>
 <ul>
 <li>Add support of <strong>HAL callback registration</strong> feature
 <ul>
@@ -102,7 +360,7 @@
 </ul></li>
 </ul></li>
 <li><p>Demonstrations binaries are no more delivered within the STM32CubeF2 MCU package. They are available for download, in addition to their required media files if any, in a standalone package accessible through each hardware board official web page. Please refer to the corresponding demonstration binary readme.txt to get web page for each board.</p></li>
-<li><strong>HAL</strong>
+<li><p><strong>HAL</strong></p>
 <ul>
 <li>Add support of HAL callback registration feature</li>
 <li>Add new <strong>HAL EXTI</strong> driver</li>
@@ -132,12 +390,12 @@
 </ul></li>
 </ul></li>
 </ul></li>
-<li><strong>CMSIS</strong>
+<li><p><strong>CMSIS</strong></p>
 <ul>
 <li>Fix known defects and several implementation enhancement</li>
 <li>Align ErrorStatus typedef to common error handling</li>
 </ul></li>
-<li><strong>Middleware</strong>
+<li><p><strong>Middleware</strong></p>
 <ul>
 <li>Update to use FreeRTOS <strong>10.0.1</strong> ST modified <strong>20190329</strong></li>
 <li>Update to use STemWin <strong>V5.44</strong> ST modified <strong>20180322</strong></li>
@@ -148,7 +406,7 @@
 <li>Update to use mbedTLS <strong>V2.14.1</strong> ST modified <strong>20190329</strong></li>
 <li>Update to use LibJPEG <strong>v8d</strong> ST modified <strong>20190201</strong></li>
 </ul></li>
-<li><strong>Projects</strong>
+<li><p><strong>Projects</strong></p>
 <ul>
 <li>Update CAN examples to support new HAL CAN driver.</li>
 <li>Update HAL CRYP examples to be aligned with new HAL CRYP drivers</li>
@@ -189,7 +447,7 @@
 </ul></li>
 <li><p>For the complete list of changes, please refer to the release notes of each firmware component</p></li>
 </ul>
-<h2 id="contents">Contents</h2>
+<h2 id="contents-1">Contents</h2>
 <table>
 <thead>
 <tr class="header">
@@ -378,29 +636,29 @@
 </tr>
 </tbody>
 </table>
-<h2 id="known-limitations">Known Limitations</h2>
+<h2 id="known-limitations-1">Known Limitations</h2>
 <ul>
 <li>Warnings detected with LibJPEG applications are related to the Libjpeg third party MW stack V8d with System Workbench for STM32 (SW4STM32) V2.9:
 <ul>
 <li>No impact of these warnings on the functional behavior</li>
 </ul></li>
 </ul>
-<h2 id="development-toolchains-and-compilers">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-1">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain <strong>V8.20.2</strong>+ ST-Link</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain <strong>V5.26</strong> + ST-LINK</li>
 <li>System Workbench for STM32 (SW4STM32) toolchain <strong>V2.9</strong> + ST-Link</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-1">Supported Devices and EVAL boards</h2>
 <ul>
 <li>STM32F217xx/215xx/207xx/205xx devices and STM322xG_EVAL board RevC</li>
 <li>STM32F207ZG and STM32F207ZG-Nucleo board RevB</li>
 </ul>
-<h2 id="backward-compatibility">Backward Compatibility</h2>
+<h2 id="backward-compatibility-1">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies">Dependencies</h2>
+<h2 id="dependencies-1">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
@@ -409,34 +667,34 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section7" aria-hidden="true"> <label for="collapse-section7" aria-hidden="true"><strong>V1.7.0 / 29-September-2017</strong></label>
 <div>
-<h1 id="maintenance-release-1">Maintenance release</h1>
-<h2 id="main-changes-1">Main Changes</h2>
+<h1 id="maintenance-release-2">Maintenance release</h1>
+<h2 id="main-changes-2">Main Changes</h2>
 <ul>
-<li>General updates to be compliant with Linux platforms</li>
-<li>General update to fix known defects and several implementations enhancement</li>
-<li>Remove support of TrueSTUDIO tool chain</li>
+<li><p>General updates to be compliant with Linux platforms</p></li>
+<li><p>General update to fix known defects and several implementations enhancement</p></li>
+<li><p>Remove support of TrueSTUDIO tool chain</p></li>
 <li><p>Remove Date and version from all header files</p></li>
-<li><strong>HAL</strong>
+<li><p><strong>HAL</strong></p>
 <ul>
 <li>General updates to fix known defects and enhancements implementation</li>
 <li>stm32f2xx_hal_mmc.c: Fix compilation warning with GCC compiler</li>
 </ul></li>
-<li><strong>CMSIS</strong>
+<li><p><strong>CMSIS</strong></p>
 <ul>
 <li>General updates to fix known defects and enhancements implementation</li>
 </ul></li>
-<li><strong>BSP</strong>
+<li><p><strong>BSP</strong></p>
 <ul>
 <li>General updates to fix known defects and enhancements implementation</li>
 <li>stm322xg_eval_lcd.c: Fix LCD compilation errors with GCC compiler</li>
 </ul></li>
-<li><strong>Projects</strong>
+<li><p><strong>Projects</strong></p>
 <ul>
 <li>Fix MDK-ARM limitation with STemWin sample demo application on STM322xG_EVAL.</li>
 </ul></li>
 <li><p>For the complete list of changes, please refer to the release notes of each firmware component</p></li>
 </ul>
-<h2 id="contents-1">Contents</h2>
+<h2 id="contents-2">Contents</h2>
 <table>
 <caption>Drivers</caption>
 <thead>
@@ -626,26 +884,26 @@
 </tr>
 </tbody>
 </table>
-<h2 id="known-limitations-1">Known Limitations</h2>
+<h2 id="known-limitations-2">Known Limitations</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-1">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-2">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.80.4 + ST-Link</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.23 + ST-LINK</li>
 <li>System Workbench for STM32 (SW4STM32) toolchain V1.14 + ST-Link</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-1">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-2">Supported Devices and EVAL boards</h2>
 <ul>
 <li>STM32F217xx/215xx/207xx/205xx devices and STM322xG_EVAL board RevC</li>
 <li>STM32F207ZG and STM32F207ZG-Nucleo board RevB</li>
 </ul>
-<h2 id="backward-compatibility-1">Backward Compatibility</h2>
+<h2 id="backward-compatibility-2">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-1">Dependencies</h2>
+<h2 id="dependencies-2">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
@@ -654,11 +912,11 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section6" aria-hidden="true"> <label for="collapse-section6" aria-hidden="true"><strong>V1.6.0 / 14-April-2017</strong></label>
 <div>
-<h1 id="maintenance-release-2">Maintenance release</h1>
-<h2 id="main-changes-2">Main Changes</h2>
+<h1 id="maintenance-release-3">Maintenance release</h1>
+<h2 id="main-changes-3">Main Changes</h2>
 <ul>
 <li><p>General update to fix known defects and several implementations enhancement</p></li>
-<li><strong>HAL</strong>
+<li><p><strong>HAL</strong></p>
 <ul>
 <li><strong>HAL CONF Template</strong> update
 <ul>
@@ -674,7 +932,7 @@
 </ul></li>
 </ul></li>
 </ul>
-<h2 id="contents-2">Contents</h2>
+<h2 id="contents-3">Contents</h2>
 <table>
 <caption>Drivers</caption>
 <thead>
@@ -864,27 +1122,27 @@
 </tr>
 </tbody>
 </table>
-<h2 id="known-limitations-2">Known Limitations</h2>
+<h2 id="known-limitations-3">Known Limitations</h2>
 <ul>
 <li>STemWin sample demo application on STM322xG_EVAL is not fully functional with MDK-ARM toolchain: the application doesn’t run successfully after the second hit of the Hide Button. in fact when pressing the button again while the progress bar displays the next steps, pressing Hide or Next Buttons are not working anymore.</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-2">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-3">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.80.1</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.23</li>
 <li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain v7.0.0</li>
 <li>System Workbench for STM32 (SW4STM32) toolchain V1.14</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-2">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-3">Supported Devices and EVAL boards</h2>
 <ul>
 <li>STM32F217xx/215xx/207xx/205xx devices and STM322xG_EVAL board RevC</li>
 <li>STM32F207ZG and STM32F207ZG-Nucleo board RevB</li>
 </ul>
-<h2 id="backward-compatibility-2">Backward Compatibility</h2>
+<h2 id="backward-compatibility-3">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-2">Dependencies</h2>
+<h2 id="dependencies-3">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
@@ -893,10 +1151,10 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section5" aria-hidden="true"> <label for="collapse-section5" aria-hidden="true"><strong>V1.5.0 / 17-March-2017</strong></label>
 <div>
-<h1 id="maintenance-release-3">Maintenance release</h1>
-<h2 id="main-changes-3">Main Changes</h2>
+<h1 id="maintenance-release-4">Maintenance release</h1>
+<h2 id="main-changes-4">Main Changes</h2>
 <ul>
-<li>Add Low Layer drivers under Drivers32F2xx_HAL_Driver
+<li><p>Add Low Layer drivers under Drivers32F2xx_HAL_Driver</p>
 <ul>
 <li>Low Layer drivers allow performance and memory footprint optimization</li>
 <li>Low Layer drivers APIs provide register level programming: they require deep knowledge of peripherals described in STM32F2xx Reference Manuals</li>
@@ -905,7 +1163,7 @@
 <li>Refer to <a href="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/user_manual/DM00111485.pdf">UM1739</a> for Low Layer presentation and <a href="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/user_manual/DM00223149.pdf">UM1940</a> for API list</li>
 </ul></li>
 <li><p>General update to fix known defects and several implementations enhancement</p></li>
-<li><strong>HAL</strong>
+<li><p><strong>HAL</strong></p>
 <ul>
 <li>Add Low Layer drivers under Drivers32F2xx_HAL_Driver</li>
 <li>Add new HAL driver for <strong>MMC</strong></li>
@@ -924,12 +1182,12 @@
 <li>Add new HAL_NAND_ConfigDevice API</li>
 </ul></li>
 </ul></li>
-<li><strong>CMSIS</strong>
+<li><p><strong>CMSIS</strong></p>
 <ul>
 <li>Use _Pos and _Mask macros for all Bit Definitions</li>
 <li>Fix known defects and several implementation enhancement</li>
 </ul></li>
-<li><strong>Middleware</strong>
+<li><p><strong>Middleware</strong></p>
 <ul>
 <li>Upgrade to use new version of LwIP V2.0.0
 <ul>
@@ -947,14 +1205,14 @@
 </ul></li>
 <li>Update STemWin Library V5.32 with a new build with EWARM V7.70</li>
 </ul></li>
-<li><strong>Projects</strong>
+<li><p><strong>Projects</strong></p>
 <ul>
 <li>Add Low Layer examples and MIX examples on the STM32F207ZG-Nucleo board</li>
 <li>Add new mbedTLS applications to replace PolarSSL middleware applications</li>
 <li>Update overall projects to be aligned with latest version of HAL, BSP and Middleware drivers</li>
 </ul></li>
 </ul>
-<h2 id="contents-3">Contents</h2>
+<h2 id="contents-4">Contents</h2>
 <table>
 <caption>Drivers</caption>
 <thead>
@@ -1144,27 +1402,27 @@
 </tr>
 </tbody>
 </table>
-<h2 id="known-limitations-3">Known Limitations</h2>
+<h2 id="known-limitations-4">Known Limitations</h2>
 <ul>
 <li>STemWin sample demo application on STM322xG_EVAL is not fully functional with MDK-ARM toolchain: the application doesn’t run successfully after the second hit of the Hide Button. in fact when pressing the button again while the progress bar displays the next steps, pressing Hide or Next Buttons are not working anymore.</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-3">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-4">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.80.1</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.23</li>
 <li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain v7.0.0</li>
 <li>System Workbench for STM32 (SW4STM32) toolchain V1.14</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-3">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-4">Supported Devices and EVAL boards</h2>
 <ul>
 <li>STM32F217xx/215xx/207xx/205xx devices and STM322xG_EVAL board RevC</li>
 <li>STM32F207ZG and STM32F207ZG-Nucleo board RevB</li>
 </ul>
-<h2 id="backward-compatibility-3">Backward Compatibility</h2>
+<h2 id="backward-compatibility-4">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-3">Dependencies</h2>
+<h2 id="dependencies-4">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
@@ -1173,11 +1431,11 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section4" aria-hidden="true"> <label for="collapse-section4" aria-hidden="true"><strong>V1.4.0 / 01-July-2016</strong></label>
 <div>
-<h1 id="maintenance-release-4">Maintenance release</h1>
-<h2 id="main-changes-4">Main Changes</h2>
+<h1 id="maintenance-release-5">Maintenance release</h1>
+<h2 id="main-changes-5">Main Changes</h2>
 <ul>
 <li><p>Maintenance release to fix known defects and several enhancements implementation</p></li>
-<li><strong>HAL</strong>
+<li><p><strong>HAL</strong></p>
 <ul>
 <li>General updates to fix known defects and enhancements implementation</li>
 <li>stm32f2xx_hal_conf_template.h
@@ -1201,11 +1459,11 @@
 <li>Overall HAL IWDG and WWDG drivers rework</li>
 </ul></li>
 </ul></li>
-<li><strong>CMSIS</strong>
+<li><p><strong>CMSIS</strong></p>
 <ul>
 <li>General updates to fix known defects and enhancements implementation</li>
 </ul></li>
-<li><strong>Middlewares</strong>
+<li><p><strong>Middlewares</strong></p>
 <ul>
 <li>Update to STemWin 5.32 version</li>
 <li>Updated USB Device V2.4.2: Fix known defects and enhancement implementation</li>
@@ -1215,11 +1473,11 @@
 <li><strong>Note:</strong> Updated architecture having impact on application based on previous version LwIP V1.4.1 ST modified 20140619</li>
 </ul></li>
 </ul></li>
-<li><strong>BSP</strong>
+<li><p><strong>BSP</strong></p>
 <ul>
 <li>General updates to fix known defects and enhancements implementation</li>
 </ul></li>
-<li><strong>Projects</strong>
+<li><p><strong>Projects</strong></p>
 <ul>
 <li>General updates to fix known defects and enhancements implementation</li>
 <li>Update applications and demonstrations related to STemWin library in order to support the latest STemWin version</li>
@@ -1229,7 +1487,7 @@
 </ul></li>
 <li><p>For the complete list of changes, please refer to the release notes of each firmware component</p></li>
 </ul>
-<h2 id="contents-4">Contents</h2>
+<h2 id="contents-5">Contents</h2>
 <table>
 <caption>Drivers</caption>
 <thead>
@@ -1419,27 +1677,27 @@
 </tr>
 </tbody>
 </table>
-<h2 id="known-limitations-4">Known Limitations</h2>
+<h2 id="known-limitations-5">Known Limitations</h2>
 <ul>
 <li>STemWin sample demo application on STM322xG_EVAL is not fully functional with MDK-ARM toolchain: the application doesn’t run successfully after the second hit of the Hide Button. in fact when pressing the button again while the progress bar displays the next steps, pressing Hide or Next Buttons are not working anymore.</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-4">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-5">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain v7.60.1</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain v5.20</li>
 <li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain v5.5.2</li>
 <li>System Workbench for STM32 (SW4STM32) toolchain V1.9</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-4">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-5">Supported Devices and EVAL boards</h2>
 <ul>
 <li>STM32F217xx/215xx/207xx/205xx devices and STM322xG_EVAL board RevC</li>
 <li><strong>STM32F207ZG and STM32F207ZG-Nucleo board RevB</strong></li>
 </ul>
-<h2 id="backward-compatibility-4">Backward Compatibility</h2>
+<h2 id="backward-compatibility-5">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-4">Dependencies</h2>
+<h2 id="dependencies-5">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
@@ -1448,12 +1706,12 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section3" aria-hidden="true"> <label for="collapse-section3" aria-hidden="true"><strong>V1.3.1 / 11-December-2015</strong></label>
 <div>
-<h1 id="maintenance-release-5">Maintenance release</h1>
-<h2 id="main-changes-5">Main Changes</h2>
+<h1 id="maintenance-release-6">Maintenance release</h1>
+<h2 id="main-changes-6">Main Changes</h2>
 <ul>
 <li><strong>Patch release to fix issue in Ethernet HAL driver </strong></li>
 </ul>
-<h2 id="contents-5">Contents</h2>
+<h2 id="contents-6">Contents</h2>
 <table>
 <caption>Drivers</caption>
 <thead>
@@ -1473,27 +1731,27 @@
 </tr>
 </tbody>
 </table>
-<h2 id="known-limitations-5">Known Limitations</h2>
+<h2 id="known-limitations-6">Known Limitations</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-5">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-6">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.40.1</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.16</li>
 <li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain v5.3.1</li>
 <li>System Workbench for STM32 (SW4STM32) toolchain V1.3.0</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-5">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-6">Supported Devices and EVAL boards</h2>
 <ul>
 <li>STM32F217xx/215xx/207xx/205xx devices and STM322xG_EVAL board RevC</li>
 <li><strong>STM32F207ZG and STM32F207ZG-Nucleo board RevB</strong></li>
 </ul>
-<h2 id="backward-compatibility-5">Backward Compatibility</h2>
+<h2 id="backward-compatibility-6">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-5">Dependencies</h2>
+<h2 id="dependencies-6">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
@@ -1502,12 +1760,12 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section2" aria-hidden="true"> <label for="collapse-section2" aria-hidden="true"><strong>V1.3.0 / 20-November-2015</strong></label>
 <div>
-<h1 id="maintenance-release-6">Maintenance release</h1>
-<h2 id="main-changes-6">Main Changes</h2>
+<h1 id="maintenance-release-7">Maintenance release</h1>
+<h2 id="main-changes-7">Main Changes</h2>
 <ul>
-<li><strong>Support new board: STM32F207ZG NUCLEO144</strong></li>
+<li><p><strong>Support new board: STM32F207ZG NUCLEO144</strong></p></li>
 <li><p><strong>Fix known defects and enhancements implementation</strong></p></li>
-<li><strong>HAL</strong>
+<li><p><strong>HAL</strong></p>
 <ul>
 <li>General updates to fix known defects and enhancements implementation</li>
 <li><strong>One change done on the HAL CRYP requires an update on the application code based on HAL V1.1.0</strong>
@@ -1516,30 +1774,30 @@
 </ul></li>
 <li>HSE_STARTUP_TIMEOUT constant has been corrected in stm32f2xx_hal_conf_template.h file, its value changed from 5000 to 100.</li>
 </ul></li>
-<li><strong>CMSIS</strong>
+<li><p><strong>CMSIS</strong></p>
 <ul>
 <li>General updates to fix known defects and enhancements implementation</li>
 </ul></li>
-<li><strong>Middlewares</strong>
+<li><p><strong>Middlewares</strong></p>
 <ul>
 <li>No changes</li>
 </ul></li>
-<li><strong>BSP</strong>
+<li><p><strong>BSP</strong></p>
 <ul>
 <li>Add new BPS drivers for STM32F2xx_Nucleo_144 boards</li>
 </ul></li>
-<li><strong>Utilities</strong>
+<li><p><strong>Utilities</strong></p>
 <ul>
 <li>Use latest version of STM32CubeUpdater V4.10.0</li>
 </ul></li>
-<li><strong>Projects</strong>
+<li><p><strong>Projects</strong></p>
 <ul>
 <li>General updates to fix known defects and enhancements implementation</li>
 <li><strong>Add 34 projects for STM32F207ZG NUCLEO144 boards</strong></li>
 </ul></li>
 <li><p>For the complete list of changes, please refer to the release notes of each firmware component</p></li>
 </ul>
-<h2 id="contents-6">Contents</h2>
+<h2 id="contents-7">Contents</h2>
 <table>
 <caption>Drivers</caption>
 <thead>
@@ -1729,27 +1987,27 @@
 </tr>
 </tbody>
 </table>
-<h2 id="known-limitations-6">Known Limitations</h2>
+<h2 id="known-limitations-7">Known Limitations</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-6">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-7">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.40.1</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.16</li>
 <li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain v5.3.1</li>
 <li>System Workbench for STM32 (SW4STM32) toolchain V1.3.0</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-6">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-7">Supported Devices and EVAL boards</h2>
 <ul>
 <li>STM32F217xx/215xx/207xx/205xx devices and STM322xG_EVAL board RevC</li>
 <li><strong>STM32F207ZG and STM32F207ZG-Nucleo board RevB</strong></li>
 </ul>
-<h2 id="backward-compatibility-6">Backward Compatibility</h2>
+<h2 id="backward-compatibility-7">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-6">Dependencies</h2>
+<h2 id="dependencies-7">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
@@ -1758,11 +2016,11 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section1" aria-hidden="true"> <label for="collapse-section1" aria-hidden="true"><strong>V1.2.0 / 09-October-2015</strong></label>
 <div>
-<h1 id="maintenance-release-7">Maintenance release</h1>
-<h2 id="main-changes-7">Main Changes</h2>
+<h1 id="maintenance-release-8">Maintenance release</h1>
+<h2 id="main-changes-8">Main Changes</h2>
 <ul>
 <li><p><strong>Maintenance release to fix known defects and several enhancements implementation</strong></p></li>
-<li><strong>HAL</strong>
+<li><p><strong>HAL</strong></p>
 <ul>
 <li>Macros and literals renaming to ensure full compatibility across STM32 series, backward compatibility with HAL V1.0.1 maintained thanks to new added file stm32_hal_legacy.h under /Inc/Legacy</li>
 <li>Fix known defects and several enhancements implementation. <strong>Four changes done on the HAL requires an update on the application code based on HAL V1.0.1</strong>
@@ -1780,25 +2038,25 @@
 <li>Several update on source code formatting, for better UM generation (i.e. Doxygen tags updated)</li>
 <li>Add *.chm UM for all drivers, a UM is provided for each superset RPN</li>
 </ul></li>
-<li><strong>CMSIS</strong></li>
+<li><p><strong>CMSIS</strong></p></li>
 <li><p>General updates to fix known defects and enhancements implementation</p></li>
-<li><strong>Middlewares</strong>
+<li><p><strong>Middlewares</strong></p>
 <ul>
 <li>Updated USB Device V2.4.1: fix known defects and several enhancement implementation</li>
 <li>Updated USB Host V3.2.2: fix known defects and several enhancement implementation</li>
 </ul></li>
-<li><strong>BSP</strong>
+<li><p><strong>BSP</strong></p>
 <ul>
 <li>Update STM322xG-EVAL BSP driver to support the cs43l22 audio codec component</li>
 </ul></li>
-<li><strong>Projects</strong>
+<li><p><strong>Projects</strong></p>
 <ul>
 <li>Add more Examples and Applications for STM322xG_EVAL board (47 in total)</li>
 <li>Add the support of System Workbench for STM32 (SW4STM32) toolchain</li>
 </ul></li>
 <li><p>For the complete list of changes, please refer to the release notes of each firmware components</p></li>
 </ul>
-<h2 id="contents-7">Contents</h2>
+<h2 id="contents-8">Contents</h2>
 <table>
 <caption>Drivers</caption>
 <thead>
@@ -1976,26 +2234,26 @@
 </tr>
 </tbody>
 </table>
-<h2 id="known-limitations-7">Known Limitations</h2>
+<h2 id="known-limitations-8">Known Limitations</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-7">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-8">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain v7.40.1</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain v5.16</li>
 <li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain v5.3.1</li>
 <li>System Workbench for STM32 (SW4STM32) toolchain V1.3.0</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-7">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-8">Supported Devices and EVAL boards</h2>
 <ul>
 <li>STM32F217xx/215xx/207xx/205xx devices and STM322xG_EVAL board RevC</li>
 </ul>
-<h2 id="backward-compatibility-7">Backward Compatibility</h2>
+<h2 id="backward-compatibility-8">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-7">Dependencies</h2>
+<h2 id="dependencies-8">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
@@ -2004,8 +2262,8 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section0" aria-hidden="true"> <label for="collapse-section0" aria-hidden="true"><strong>V1.1.0 / 13-March-2014</strong></label>
 <div>
-<h1 id="maintenance-release-8">Maintenance release</h1>
-<h2 id="main-changes-8">Main Changes</h2>
+<h1 id="maintenance-release-9">Maintenance release</h1>
+<h2 id="main-changes-9">Main Changes</h2>
 <ul>
 <li>Added LCD ili9320 component</li>
 <li>BSP ili9320 V1.0.0 <a href="Drivers/BSP/Components/ili9320/Release_Notes.html">release notes</a></li>
@@ -2015,12 +2273,12 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section" aria-hidden="true"> <label for="collapse-section" aria-hidden="true"><strong>V1.0.0 / 07-March-2014</strong></label>
 <div>
-<h1 id="maintenance-release-9">Maintenance release</h1>
-<h2 id="main-changes-9">Main Changes</h2>
+<h1 id="maintenance-release-10">Maintenance release</h1>
+<h2 id="main-changes-10">Main Changes</h2>
 <ul>
 <li><strong>First official release of STM32CubeF2 (STM32Cube for STM32F2 Series)</strong></li>
 </ul>
-<h2 id="contents-8">Contents</h2>
+<h2 id="contents-9">Contents</h2>
 <table>
 <caption>Drivers</caption>
 <thead>
@@ -2190,13 +2448,13 @@
 <li>TrueSTUDIO projects are not provided for a few Applications</li>
 <li>The LCD ili9320 mounted on previous versions of the STM322xG_EVAL board will be supported in a future version of the STM32Cube F2 FW package (V1.1.0)</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-8">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-9">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V6.70.2 + ST-Link</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM toolchain v4.73)</li>
 <li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) tool</li>
 </ul>
-<h2 id="supported-devices-and-eval-boards-8">Supported Devices and EVAL boards</h2>
+<h2 id="supported-devices-and-eval-boards-9">Supported Devices and EVAL boards</h2>
 <ul>
 <li>STM32F217xx/215xx/207xx/205xx devices and STM322xG_EVAL board</li>
 <li>This package contains the list of components mentionned above but the current FW package Examples and Applications have used only the following components
@@ -2212,11 +2470,11 @@
 </ul></li>
 </ul></li>
 </ul>
-<h2 id="backward-compatibility-8">Backward Compatibility</h2>
+<h2 id="backward-compatibility-9">Backward Compatibility</h2>
 <ul>
 <li>None</li>
 </ul>
-<h2 id="dependencies-8">Dependencies</h2>
+<h2 id="dependencies-9">Dependencies</h2>
 <ul>
 <li>None</li>
 </ul>
