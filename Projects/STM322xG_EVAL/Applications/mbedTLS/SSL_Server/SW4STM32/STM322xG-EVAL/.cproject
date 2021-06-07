@@ -77,7 +77,7 @@
 							<tool id="fr.ac6.managedbuild.tool.gnu.archiver.644055088" name="MCU GCC Archiver" superClass="fr.ac6.managedbuild.tool.gnu.archiver" />
 							<tool id="fr.ac6.managedbuild.tool.gnu.cross.assembler.807309758" name="MCU GCC Assembler" superClass="fr.ac6.managedbuild.tool.gnu.cross.assembler">
 								<option id="gnu.both.asm.option.include.paths.54401806" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="../../../inc" />
+									<listOptionValue builtIn="false" value="../../../Inc"/>
 									
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.2077430405" superClass="cdt.managedbuild.tool.gnu.assembler.input" />
@@ -168,7 +168,7 @@
 							<tool id="fr.ac6.managedbuild.tool.gnu.archiver.644055088" name="MCU GCC Archiver" superClass="fr.ac6.managedbuild.tool.gnu.archiver" />
 							<tool id="fr.ac6.managedbuild.tool.gnu.cross.assembler.exe.release.169411345" name="MCU GCC Assembler" superClass="fr.ac6.managedbuild.tool.gnu.cross.assembler.exe.release">
 								<option id="gnu.both.asm.option.include.paths.54401806" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="../../../inc" />
+									<listOptionValue builtIn="false" value="../../../Inc"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.2077430405" superClass="cdt.managedbuild.tool.gnu.assembler.input" />
 								<inputType id="fr.ac6.managedbuild.tool.gnu.cross.assembler.input.954868681" superClass="fr.ac6.managedbuild.tool.gnu.cross.assembler.input" />
