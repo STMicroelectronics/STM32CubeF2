@@ -121,7 +121,7 @@ USBD_StatusTypeDef USBD_Init(USBD_HandleTypeDef *pdev,
 
 /**
 * @brief  USBD_DeInit
-*         Re-Initialize th device library
+*         De-Initialize the device library
 * @param  pdev: device instance
 * @retval status: status
 */
@@ -136,7 +136,7 @@ USBD_StatusTypeDef USBD_DeInit(USBD_HandleTypeDef *pdev)
   /* Stop the low level driver  */
   USBD_LL_Stop(pdev);
 
-  /* Initialize low level driver */
+  /* DeInitialize low level driver */
   USBD_LL_DeInit(pdev);
 
   return USBD_OK;
