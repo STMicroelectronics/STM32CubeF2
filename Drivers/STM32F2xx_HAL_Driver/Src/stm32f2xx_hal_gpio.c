@@ -104,6 +104,9 @@
   ******************************************************************************
   */
 
+/*Ignore compiler warnings */
+#pragma GCC diagnostic ignored "-Wsign-compare"
+
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f2xx_hal.h"
 

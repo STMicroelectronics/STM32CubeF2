@@ -194,6 +194,9 @@
   *
   ******************************************************************************
   */
+/*Ignore compiler warnings */
+#pragma GCC diagnostic ignored "-Wcast-align"
+
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f2xx_hal.h"
