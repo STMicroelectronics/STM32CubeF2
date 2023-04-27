@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Release Notes for Projects of STM32CubeF2 Firmware Package</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../_htmresc/mini-st_2020.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <link rel="icon" type="image/x-icon" href="../_htmresc/favicon.png" />
+</head>
+<body>
+<div class="row">
+<div class="col-sm-12 col-lg-4">
+<center>
+<h1 id="release-notes-for-projects-of-stm32cubef2-firmware-package"><strong>Release Notes for Projects of STM32CubeF2 Firmware Package</strong></h1>
+<p>Copyright © 2017 STMicroelectronics<br />
+</p>
+<a href="https://www.st.com" class="logo"><img src="../_htmresc/st_logo_2020.png" alt="ST logo" /></a>
+</center>
+<h1 id="purpose">Purpose</h1>
+<p>The projects are a set of applicative tasks that aim to explain and provide use cases of the different products features based on the products hardware (Boards, STM32 Core(s) features, interconnections and peripherals) and built around the different firmware components. They can be directly used or adapted by the STM32CubeF2 Firmware Package users. They provide basic functionalities, show main features or demonstrate performance. They are provided with preconfigured projects for the main supported toolchains.</p>
+<p>In the STM32CubeF2 Firmware Package, the projects are organized in a sequential scheme based on the following levels:</p>
+<ul>
+<li>Boards : Hardware platform (evaluation, discovery, nucleo boards)</li>
+<li>Project Category:
+<ul>
+<li>Applications</li>
+<li>Demonstrations</li>
+<li>Examples</li>
+<li>Examples_LL</li>
+<li>Examples_MIX</li>
+<li>Templates</li>
+<li>Templates_LL</li>
+</ul></li>
+<li>Project Class</li>
+<li>Project Subclass</li>
+</ul>
+<p>The Project Class refers to the main peripherals (drivers), middleware libraries or BSP classes while the projects Subclass stands for a project specific feature within a class.</p>
+<p>The exhaustive list of projects is provided in this table: <a href="STM32CubeProjectsList.html">STM32CubeProjectsList</a>.</p>
+</div>
+<div class="col-sm-12 col-lg-8">
+<h1 id="update-history">Update History</h1>
+<div class="collapse">
+<input type="checkbox" id="collapse-section11_1" checked aria-hidden="true"> <label for="collapse-section11_1" aria-hidden="true"><strong>V1.9.4 / 07-April-2023</strong></label>
+<div>
+<h1 id="maintenance-release">Maintenance release</h1>
+<h2 id="main-changes">Main Changes</h2>
+<p><strong>NUCLEO-F207ZG</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Replace hard-coded page end address by a variable in EE_VerifyPageFullyErased() to consider both PAGE 0 and PAGE 1 instead of only PAGE 0 in EEPROM emulation application.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section1_11_0" aria-hidden="true"> <label for="collapse-section1_11_0" aria-hidden="true"><strong>V1.9.3 / 21-May-2021</strong></label>
+<div>
+<h1 id="maintenance-release-1">Maintenance release</h1>
+<h2 id="main-changes-1">Main Changes</h2>
+<ul>
+<li>Fix include path on some SW4STM32 Projects.</li>
+</ul>
+<h2 id="known-limitations">Known Limitations</h2>
+<ul>
+<li>Warnings detected with LibJPEG applications are related to the Libjpeg third party MW stack V8d with System Workbench for STM32 (SW4STM32) V2.9:
+<ul>
+<li>No impact of these warnings on the functional behavior</li>
+</ul></li>
+</ul>
+<h2 id="development-toolchains-and-compilers">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V8.40.2+ ST-Link</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.31 + ST-LINK</li>
+<li>System Workbench for STM32 (SW4STM32) toolchain V2.9 + ST-Link</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards">Supported Devices and EVAL boards</h2>
+<ul>
+<li>STM32F217xx/215xx/207xx/205xx devices and STM322xG_EVAL board RevC</li>
+<li>STM32F207ZG and STM32F207ZG-Nucleo board RevB</li>
+</ul>
+<h2 id="backward-compatibility">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section10_1" aria-hidden="true"> <label for="collapse-section10_1" aria-hidden="true"><strong>V1.9.2 / 22-October-2020</strong></label>
+<div>
+<h1 id="maintenance-release-2">Maintenance release</h1>
+<h2 id="main-changes-2">Main Changes</h2>
+<ul>
+<li>No changes compared to previous version</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section9" aria-hidden="true"> <label for="collapse-section9" aria-hidden="true"><strong>V1.9.1 / 09-September-2020</strong></label>
+<div>
+<h1 id="maintenance-release-3">Maintenance release</h1>
+<h2 id="main-changes-3">Main Changes</h2>
+<ul>
+<li>No changes compared to previous version.</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section8" aria-hidden="true"> <label for="collapse-section8" aria-hidden="true"><strong>V1.9.0 / 31-December-2019</strong></label>
+<div>
+<h1 id="maintenance-release-4">Maintenance release</h1>
+<h2 id="main-changes-4">Main Changes</h2>
+<ul>
+<li>No changes compared to previous version.</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section7" aria-hidden="true"> <label for="collapse-section7" aria-hidden="true"><strong>V1.8.0 / 26-June-2019</strong></label>
+<div>
+<h1 id="maintenance-release-5">Maintenance release</h1>
+<h2 id="main-changes-5">Main Changes</h2>
+<p><strong>STM322xG_EVAL</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Add <strong>EEPROM application</strong> running on STM322xG-EVAL
+<ul>
+<li>This application describes the software solution for substituting standalone EEPROM by emulating the EEPROM mechanism using the on-chip Flash of STM32F2xx devices.</li>
+</ul></li>
+<li>Add <strong>IAP application</strong> running on STM322xG-EVAL
+<ul>
+<li>This application describes how to be loaded into Flash memory using In-Application Programming (IAP, through USART).</li>
+</ul></li>
+<li>Update MbedTLS applications to be compliant with new MbedTLS architecture</li>
+<li>Update FreeRTOS applications to be compliant with new FreeRTOS architecture</li>
+<li>Update STemWin applications to be compliant with new STemWin architecture</li>
+<li>Update USB HOST projects to be compliant with USB Host Stack V3.3.3
+<ul>
+<li>Add the following USB callback in usbh_conf.c user file:
+<ul>
+<li>HAL_HCD_PortEnabled_Callback()</li>
+<li>HAL_HCD_PortDisabled_Callback()</li>
+</ul></li>
+</ul></li>
+<li>Update USB Device projects for <strong>207xx/217xx</strong> devices to be compliant with USB Device V2.5.3
+<ul>
+<li>USB HS mode isn’t supported by these STM32 devices</li>
+</ul></li>
+<li>Update USB device applications by adding a UNUSED() macro in the following API on file usbd_desc.c files in order to avoid compilation warnings with EWARM 8.30
+<ul>
+<li>USBD_DFU_DeviceDescriptor()</li>
+<li>USBD_DFU_LangIDStrDescriptor()</li>
+<li>USBD_DFU_ManufacturerStrDescriptor()</li>
+<li>USBD_DFU_SerialStrDescriptor()</li>
+</ul></li>
+<li>Remove useless setting of ep0_mps in usbd_conf.c file for USB device applications</li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>Update CAN examples to support new HAL CAN driver.</li>
+<li>Update HAL CRYP examples to be aligned with new HAL CRYP drivers</li>
+<li>Update HAL I2C examples to be compliant with new I2C API</li>
+<li>Rework GPIO_InfiniteLedToggling_Init LL example to use GPIO initialization structure for GPIO configuration instead of LL inline macros</li>
+<li>Update DMA FIFO Mode examples to use HAL DMA registers Callback API to register the different DMA transfer Callbacks</li>
+</ul></li>
+</ul>
+<h2 id="contents">Contents</h2>
+<h3 id="projects">Projects</h3>
+<table>
+<caption>Projects STM322xG_EVAL</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM322xG_EVAL</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.1.4</strong></td>
+<td style="text-align: center;">Projects/STM322xG_EVAL/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM322xG_EVAL</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.1.4</strong></td>
+<td style="text-align: center;">Projects/STM322xG_EVAL/Examples</td>
+</tr>
+</tbody>
+</table>
+<h2 id="known-limitations-1">Known Limitations</h2>
+<ul>
+<li>Warnings detected with LibJPEG applications are related to the Libjpeg third party MW stack V8d with System Workbench for STM32 (SW4STM32) V2.9:
+<ul>
+<li>No impact of these warnings on the functional behavior</li>
+</ul></li>
+</ul>
+<h2 id="development-toolchains-and-compilers-1">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V8.20.2+ ST-Link</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.26 + ST-LINK</li>
+<li>System Workbench for STM32 (SW4STM32) toolchain V2.9 + ST-Link</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards-1">Supported Devices and EVAL boards</h2>
+<ul>
+<li>STM32F217xx/215xx/207xx/205xx devices and STM322xG_EVAL board RevC</li>
+<li>STM32F207ZG and STM32F207ZG-Nucleo board RevB</li>
+</ul>
+<h2 id="backward-compatibility-1">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies-1">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section68" aria-hidden="true"> <label for="collapse-section68" aria-hidden="true"><strong>V1.7.0 / 29-September-2017</strong></label>
+<div>
+<h1 id="maintenance-release-6">Maintenance release</h1>
+<h2 id="main-changes-6">Main Changes</h2>
+<ul>
+<li>Fix MDK-ARM limitation with STemWin sample demo application on STM322xG_EVAL</li>
+</ul>
+<h2 id="known-limitations-2">Known Limitations</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-2">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.80.4 + ST-Link</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.23 + ST-LINK</li>
+<li>System Workbench for STM32 (SW4STM32) toolchain V1.14 + ST-Link</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards-2">Supported Devices and EVAL boards</h2>
+<ul>
+<li>STM32F217xx/215xx/207xx/205xx devices and STM322xG_EVAL board RevC</li>
+<li>STM32F207ZG and STM32F207ZG-Nucleo board RevB</li>
+</ul>
+<h2 id="backward-compatibility-2">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies-2">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section5" aria-hidden="true"> <label for="collapse-section5" aria-hidden="true"><strong>V1.6.0 / 14-April-2017</strong></label>
+<div>
+<h1 id="maintenance-release-7">Maintenance release</h1>
+<h2 id="main-changes-7">Main Changes</h2>
+<p><strong>NUCLEO-F207ZG</strong>:</p>
+<ul>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>Add support for HAL MMC driver.</li>
+</ul></li>
+</ul>
+<p><strong>STM322xG_EVAL</strong>:</p>
+<ul>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>Add support for HAL MMC driver.</li>
+</ul></li>
+</ul>
+<h2 id="contents-1">Contents</h2>
+<h3 id="projects-1">Projects</h3>
+<table>
+<caption>Projects STM322xG_EVAL</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM322xG_EVAL</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.1.3</strong></td>
+<td style="text-align: center;">Projects/STM322xG_EVAL/Templates</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects NUCLEO-F207ZG</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F207ZG</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.0.3</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F207ZG/Templates</td>
+</tr>
+</tbody>
+</table>
+<h2 id="known-limitations-3">Known Limitations</h2>
+<ul>
+<li>STemWin sample demo application on STM322xG_EVAL is not fully functional with MDK-ARM toolchain: the application doesn’t run successfully after the second hit of the Hide Button. in fact when pressing the button again while the progress bar displays the next steps, pressing Hide or Next Buttons are not working anymore</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-3">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.80.1</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.23</li>
+<li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain v7.0.0</li>
+<li>System Workbench for STM32 (SW4STM32) toolchain V1.14</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards-3">Supported Devices and EVAL boards</h2>
+<ul>
+<li>STM32F217xx/215xx/207xx/205xx devices and STM322xG_EVAL board RevC</li>
+<li>STM32F207ZG and STM32F207ZG-Nucleo board RevB</li>
+</ul>
+<h2 id="backward-compatibility-3">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies-3">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section4" aria-hidden="true"> <label for="collapse-section4" aria-hidden="true"><strong>V1.5.0 / 17-March-2017</strong></label>
+<div>
+<h1 id="maintenance-release-8">Maintenance release</h1>
+<h2 id="main-changes-8">Main Changes</h2>
+<ul>
+<li>Add new mbedTLS applications to replace PolarSSL middleware applications</li>
+<li>Update overall projects to be aligned with latest version of HAL, BSP and Middleware drivers</li>
+</ul>
+<p><strong>STM32F207ZG-Nucleo</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Update applications projects to support latest version of FatFS and LwIP middleware</li>
+<li>Update system_stm32f2xx.c file in all projects to be aligned with latest version of CMSIS STM32F2xx device implementation</li>
+<li>Update stm32f2xx_hal_conf.h file in all projects to be aligned with new conf_template.h</li>
+<li>Update USB applications to enhance implementation</li>
+</ul></li>
+<li><p><strong>Demonstrations</strong></p>
+<ul>
+<li>Update system_stm32f2xx.c file to be aligned with latest version of CMSIS STM32F2xx device implementation</li>
+<li>Update stm32f2xx_hal_conf.h file to be aligned with new conf_template.h</li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>General examples projects update to be aligned with new HAL SD and BSP Drivers implementation</li>
+<li>Update system_stm32f2xx.c file in all projects to be aligned with latest version of CMSIS STM32F2xx device implementation</li>
+<li>Update stm32f2xx_hal_conf.h file in all projects to be aligned with new conf_template.h</li>
+<li>Update DMA_FLASHToRAM example to use FIFO mode instead of direct mode for memory to memory transfer</li>
+</ul></li>
+<li><p><strong>Low Layer Examples</strong></p></li>
+</ul>
+<p>First official release.</p>
+<ul>
+<li><strong>Low Layer MIX Examples</strong></li>
+</ul>
+<p>First official release.</p>
+<ul>
+<li><strong>Templates LL</strong></li>
+</ul>
+<p>First official release containing the Low Layer templates.</p>
+<p><strong>STM322xG-EVAL</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>General applications projects update to be aligned with new HAL SD and BSP Drivers implementation</li>
+<li>Update applications projects to support latest version of FatFS, LibJPEG and LwIP middleware</li>
+<li>Add new applications SSL_Server and SSL_Client for mbedTLS middleware</li>
+<li>Remove the PolarSSL applications: no more supported within the STM32Cube_FW_F2 and replaced by mbedTLS applications</li>
+<li>USB_Device/CDC_Standalone application
+<ul>
+<li>Update CDC descriptor to support Windows 10</li>
+</ul></li>
+<li>USB_HOST/FWUpgrade_Standalone</li>
+<li>Update to support non 32-bits aligned firmware binaries
+<ul>
+<li>Update applications related to STemWin library to support STemWin 5.32 version</li>
+</ul></li>
+<li>Update system_stm32f2xx.c file in all projects to be aligned with latest version of CMSIS STM32F2xx device implementation</li>
+<li>Update stm32f2xx_hal_conf.h file in all projects to be aligned with new conf_template.h</li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>General examples projects update to be aligned with new HAL SD and BSP Drivers implementation</li>
+<li>Update system_stm32f2xx.c file in all projects to be aligned with latest version of CMSIS STM32F2xx device implementation</li>
+<li>Update stm32f2xx_hal_conf.h file in all projects to be aligned with new conf_template.h</li>
+<li>Update DMA_FLASHToRAM example to use FIFO mode instead of direct mode for memory to memory transfer</li>
+<li>Update FMC_SRAM example to enhance implementation</li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>Update system_stm32f2xx.c file to be aligned with latest version of CMSIS STM32F2xx device implementation</li>
+<li>Update stm32f2xx_hal_conf.h file to be aligned with new conf_template.h</li>
+</ul></li>
+</ul>
+<h2 id="contents-2">Contents</h2>
+<h3 id="projects-2">Projects</h3>
+<table>
+<caption>Projects STM322xG_EVAL</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM322xG_EVAL</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.1.3</strong></td>
+<td style="text-align: center;">Projects/STM322xG_EVAL/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM322xG_EVAL</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.1.3</strong></td>
+<td style="text-align: center;">Projects/STM322xG_EVAL/Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM322xG_EVAL</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.1.2</strong></td>
+<td style="text-align: center;">Projects/STM322xG_EVAL/Templates</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects NUCLEO-F207ZG</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F207ZG</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.0.2</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F207ZG/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F207ZG</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.0.2</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F207ZG/Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F207ZG</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.0.2</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F207ZG/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F207ZG</td>
+<td style="text-align: left;"><strong>Examples_LL</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F207ZG/Examples_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F207ZG</td>
+<td style="text-align: left;"><strong>Examples_MIX</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F207ZG/Examples_MIX</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F207ZG</td>
+<td style="text-align: left;"><strong>Templates_LL</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F207ZG/Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p>Note: in the tables above, project categories <strong>highlighted</strong> have changed since previous release.</p>
+<h2 id="known-limitations-4">Known Limitations</h2>
+<ul>
+<li>STemWin sample demo application on STM322xG_EVAL is not fully functional with MDK-ARM toolchain: the application doesn’t run successfully after the second hit of the Hide Button. in fact when pressing the button again while the progress bar displays the next steps, pressing Hide or Next Buttons are not working anymore.</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-4">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V7.80.1</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.23</li>
+<li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain v7.0.0</li>
+<li>System Workbench for STM32 (SW4STM32) toolchain V1.14</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards-4">Supported Devices and EVAL boards</h2>
+<ul>
+<li>STM32F217xx/215xx/207xx/205xx devices and STM322xG_EVAL board RevC</li>
+<li>STM32F207ZG and STM32F207ZG-Nucleo board RevB</li>
+</ul>
+<h2 id="backward-compatibility-4">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies-4">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section3" aria-hidden="true"> <label for="collapse-section3" aria-hidden="true"><strong>V1.4.0 / 01-July-2016</strong></label>
+<div>
+<h1 id="maintenance-release-9">Maintenance release</h1>
+<h2 id="main-changes-9">Main Changes</h2>
+<p><strong>STM322xG_EVAL</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Update LwIP and PolarSSL applications to use the latest lwIP version</li>
+<li>LibJPEG_Decoding application: increase the heap size</li>
+<li>Update applications using FreeRTOS to use TIM HW as time base source</li>
+<li>stm32f2xx_hal_conf.h:
+<ul>
+<li>Adjust the HSE Start-up Timeout value: 100ms instead of 5s</li>
+<li>Add new define USE_SPI_CRC for code cleanup when the CRC calculation is disabled</li>
+<li>Add new define for the LSE start-up Timeout: LSE_STARTUP_TIMEOUT</li>
+</ul></li>
+<li>usbh_conf.c
+<ul>
+<li>Remove adding delay in the HAL_HCD_Connect_Callback()</li>
+</ul></li>
+<li>USB_HOST_Standalone:
+<ul>
+<li>Correct a misbehavior of the backspace key</li>
+</ul></li>
+<li>LwIP_TCP_Echo_Server:
+<ul>
+<li>Update to fix memory management issue</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>stm32f2xx_hal_conf.h:
+<ul>
+<li>Adjust the HSE Start-up Timeout value: 100ms instead of 5s</li>
+<li>Add new define USE_SPI_CRC for code cleanup when the CRC calculation is disabled</li>
+<li>Add new define for the LSE start-up Timeout: LSE_STARTUP_TIMEOUT</li>
+</ul></li>
+<li>HAL_TimeBase
+<ul>
+<li>Update to use new HAL TimeBase driver template stm32xxx_hal_timebase_time</li>
+</ul></li>
+<li>Add two new time base examples</li>
+<li>Update HAL_TimeBase example to use TIM HW as time base source instead of Systick</li>
+<li>Update IWDG example to be in line with latest updates done on HAL IWDG drivers
+<ul>
+<li>Remove the HAL_IWDG_Start function in the main.c file</li>
+</ul></li>
+<li>Update WWDG examples to be in line with latest updates done on HAL WWDG drivers
+<ul>
+<li>Remove the HAL_WWDG_Start and update the HAL_WWDG_Refresh functions in the main.c file</li>
+<li>Remove HAL_WWDG_MspDeInit function from stm32f2xx_hal_msp.c file</li>
+</ul></li>
+<li>Update DMA_FLASHToRAM example to use HAL_DMA_RegisterCallback() function</li>
+<li>Rework I2C_TwoBoards_AdvComIT example following changes in latest HAL version
+<ul>
+<li>Update to allow master to restart communication when slave doesn’t acknowledge its address</li>
+</ul></li>
+<li>Update SPI DMA example to manage SPI peripheral errors during DMA process</li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>stm32f2xx_hal_conf.h:
+<ul>
+<li>Adjust the HSE Start-up Timeout value: 100ms instead of 5s</li>
+<li>Add new define USE_SPI_CRC for code cleanup when the CRC calculation is disabled</li>
+<li>Add new define for the LSE start-up Timeout: LSE_STARTUP_TIMEOUT</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>NUCLEO-F207ZG</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>stm32f2xx_hal_conf.h:
+<ul>
+<li>Adjust the HSE Start-up Timeout value: 100ms instead of 5s</li>
+<li>Add new define USE_SPI_CRC for code cleanup when the CRC calculation is disabled</li>
+<li>Add new define for the LSE start-up Timeout: LSE_STARTUP_TIMEOUT</li>
+</ul></li>
+<li>Update LwIP applications to use the latest lwIP version</li>
+<li>usbh_conf.c:
+<ul>
+<li>Remove adding delay in the HAL_HCD_Connect_Callback()</li>
+</ul></li>
+<li>Update applications using FreeRTOS to use TIM HW as time base source</li>
+</ul></li>
+<li><p><strong>Demonstrations</strong></p>
+<ul>
+<li>stm32f2xx_hal_conf.h:
+<ul>
+<li>Adjust the HSE Start-up Timeout value: 100ms instead of 5s</li>
+<li>Add new define USE_SPI_CRC for code cleanup when the CRC calculation is disabled</li>
+<li>Add new define for the LSE start-up Timeout: LSE_STARTUP_TIMEOUT</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>stm32f2xx_hal_conf.h:
+<ul>
+<li>Adjust the HSE Start-up Timeout value: 100ms instead of 5s</li>
+<li>Add new define USE_SPI_CRC for code cleanup when the CRC calculation is disabled</li>
+<li>Add new define for the LSE start-up Timeout: LSE_STARTUP_TIMEOUT</li>
+</ul></li>
+<li>Add 2 new HAL TimeBase examples : HAL_TimeBase_RTC_ALARM and HAL_TimeBase_RTC_WKUP</li>
+<li>Update HAL_TimeBase example to use TIM HW as time base source instead of Systick</li>
+<li>Update DMA_FLASHToRAM example to use HAL_DMA_RegisterCallback() function</li>
+<li>Update IWDG example to be inline with latest updates done on HAL IWDG drivers
+<ul>
+<li>Remove the HAL_IWDG_Start function in the main.c file</li>
+</ul></li>
+<li>Update WWDG examples to be in line with latest updates done on HAL WWDG drivers
+<ul>
+<li>Remove the HAL_WWDG_Start and update the HAL_WWDG_Refresh functions in the main.c file</li>
+<li>Remove HAL_WWDG_MspDeInit function from stm32f2xx_hal_msp.c file</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Templates</strong></p>
+<ul>
+<li>stm32f2xx_hal_conf.h:
+<ul>
+<li>Adjust the HSE Start-up Timeout value: 100ms instead of 5s</li>
+<li>Add new define USE_SPI_CRC for code cleanup when the CRC calculation is disabled</li>
+<li>Add new define for the LSE start-up Timeout: LSE_STARTUP_TIMEOUT</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="contents-3">Contents</h2>
+<h3 id="projects-3">Projects</h3>
+<table>
+<caption>Projects STM322xG_EVAL</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM322xG_EVAL</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.1.2</strong></td>
+<td style="text-align: center;">Projects/STM322xG_EVAL/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM322xG_EVAL</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.1.2</strong></td>
+<td style="text-align: center;">Projects/STM322xG_EVAL/Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM322xG_EVAL</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.1.1</strong></td>
+<td style="text-align: center;">Projects/STM322xG_EVAL/Templates</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects NUCLEO-F207ZG</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F207ZG</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.0.1</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F207ZG/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F207ZG</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.0.1</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F207ZG/Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F207ZG</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.0.1</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F207ZG/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F207ZG</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.0.1</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F207ZG/Templates</td>
+</tr>
+</tbody>
+</table>
+<p>Note: in the tables above, project categories <strong>highlighted</strong> have changed since previous release.</p>
+<h2 id="known-limitations-5">Known Limitations</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-5">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain v7.60.1</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain v5.20</li>
+<li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain v5.5.2</li>
+<li>System Workbench for STM32 (SW4STM32) toolchain V1.9</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards-5">Supported Devices and EVAL boards</h2>
+<ul>
+<li>STM32F217xx/215xx/207xx/205xx devices and STM322xG_EVAL board RevC</li>
+<li><strong>STM32F207ZG and STM32F207ZG-Nucleo board RevB</strong></li>
+</ul>
+<h2 id="backward-compatibility-5">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies-5">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section1" aria-hidden="true"> <label for="collapse-section1" aria-hidden="true"><strong>V1.3.1 / 11-December-2015</strong></label>
+<div>
+<h1 id="maintenance-release-10">Maintenance release</h1>
+<h2 id="main-changes-10">Main Changes</h2>
+<ul>
+<li>No changes compared to previous version.</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section0" aria-hidden="true"> <label for="collapse-section0" aria-hidden="true"><strong>V1.3.0 / 20-November-2015</strong></label>
+<div>
+<h1 id="maintenance-release-11">Maintenance release</h1>
+<h2 id="main-changes-11">Main Changes</h2>
+<p><strong>NUCLEO-F207ZG</strong>: First official release</p>
+<p><strong>STM322xG_EVAL</strong>:</p>
+<ul>
+<li><p><strong>Applications</strong></p>
+<ul>
+<li>Update to use slash “/” instead of backslash "" in the include path to avoid the Unix compilation errors</li>
+<li>LibJPEG_Decoding application: increase the heap size</li>
+</ul></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li>ADC_TripleModeInterleaved example: update to use ADC triple mode instead of ADC dual mode</li>
+</ul></li>
+</ul>
+<h2 id="contents-4">Contents</h2>
+<h3 id="projects-4">Projects</h3>
+<table>
+<caption>Projects STM322xG_EVAL</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM322xG_EVAL</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.1.1</strong></td>
+<td style="text-align: center;">Projects/STM322xG_EVAL/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM322xG_EVAL</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.1.1</strong></td>
+<td style="text-align: center;">Projects/STM322xG_EVAL/Examples</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Projects NUCLEO-F207ZG</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F207ZG</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F207ZG/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F207ZG</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F207ZG/Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F207ZG</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F207ZG/Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F207ZG</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/NUCLEO-F207ZG/Templates</td>
+</tr>
+</tbody>
+</table>
+<p>Note: in the tables above, project categories <strong>highlighted</strong> have changed since previous release.</p>
+<h2 id="known-limitations-6">Known Limitations</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-6">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain v7.40.1</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain v5.16</li>
+<li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain v5.3.1</li>
+<li>System Workbench for STM32 (SW4STM32) toolchain V1.3.0 + ST-Link</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards-6">Supported Devices and EVAL boards</h2>
+<ul>
+<li>STM32F217xx/215xx/207xx/205xx devices and STM322xG_EVAL board RevC</li>
+</ul>
+<h2 id="backward-compatibility-6">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies-6">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section100" aria-hidden="true"> <label for="collapse-section100" aria-hidden="true"><strong>V1.2.0 / 09-October-2015</strong></label>
+<div>
+<h1 id="maintenance-release-12">Maintenance release</h1>
+<h2 id="main-changes-12">Main Changes</h2>
+<p><strong>STM322xG_EVAL</strong>:</p>
+<ul>
+<li><strong>Application</strong>
+<ul>
+<li>Add the support System Workbench for STM32 (SW4STM32) toolchain</li>
+<li>All projects updated following changes in latest version of HAL and Middlewares</li>
+<li>Add 17 new applications:
+<ul>
+<li>FatFs_USBDisk_MultipleAccess_RTOS</li>
+<li>LwIP_HTTP_Server_Socket_RTOS</li>
+<li>LWIP_IAP</li>
+<li>LWIP_TFTP_Server</li>
+<li>LibJPEG_Decoding</li>
+<li>LibJPEG_Encoding</li>
+<li>PolarSSL_Client</li>
+<li>PolarSSL_Server</li>
+<li>USB_Device_Standalone</li>
+<li>USB_Device_Standalone</li>
+<li>USB_Device_Standalone</li>
+<li>USB_Host_Standalone</li>
+<li>USB_Host_Standalone</li>
+<li>USB_Host_Standalone</li>
+<li>USB_Host_RTOS</li>
+<li>USB_Host_RTOS</li>
+<li>USB_Host_Standalone</li>
+</ul></li>
+<li>Miscellaneous enhancements</li>
+<li>Force initialization of all PPP Init structure’s field before calling HAL_PPP_Init() API</li>
+<li>Common update for all Applications
+<ul>
+<li>Update EWARM startup file for all projects to cope with compiler enhancement of the V7.x version</li>
+<li>Update “stm32f2xx_hal_conf.h” to be in line with HAL V1.1.0: add new defines LSI_VALUE, LSE_VALUE and TICK_INT_PRIORITY</li>
+<li>Update “stm32f2xx_it.c”: add the include of “main.h” before the “stm32f2xx_it.h”, in order to provide access to CMSIS device file via “stm32f2xx_hal.h”</li>
+</ul></li>
+<li>All <strong>FreeRTOS</strong> based applications: update SysTick_Handler() ISR function in “stm32f2xx_it.c” and update the value of INCLUDE_xTaskGetSchedulerState to 1 in “FreeRTOSConfig.h”. This update is needed to avoid conflict between the HAL action on the SysTick when the FreeRTOS is used; we need to ensure that FreeRTOS scheduler has started before incrementing the tick. Below the updated applications:
+<ul>
+<li>FatFs_RAMDisk_RTOS</li>
+<li>FatFs_USBDisk_RTOS</li>
+<li>FatFs_uSD_RTOS</li>
+<li>FreeRTOS_LowPower</li>
+<li>FreeRTOS_Mutexes</li>
+<li>FreeRTOS_Queues</li>
+<li>FreeRTOS_Semaphore</li>
+<li>FreeRTOS_SemaphoreFromISR</li>
+<li>FreeRTOS_ThreadCreation</li>
+<li>FreeRTOS_Timers</li>
+<li>LwIP_HTTP_Server_Netconn_RTOS</li>
+<li>LwIP_UDPTCP_Echo_Server_Netconn_RTOS</li>
+</ul></li>
+<li><strong>LwIP</strong> applications Update
+<ul>
+<li>Add TrueSTUDIO workspaces for the LwIP_HTTP_Server_Netconn_RTOS application</li>
+<li>Remove ARP timer initialization and callback from “ethernetif.c” file for the following applications using RTOS
+<ul>
+<li>LwIP_HTTP_Server_Netconn_RTOS</li>
+<li>LwIP_UDPTCP_Echo_Server_Netconn_RTOS</li>
+</ul></li>
+<li>Add the management of timeout based on systick for polling process in “ethernetif.c” file for all LwIP applications</li>
+<li>Remove the MCO configuration (PA8) from HAL_ETH_MspInit() function for all LwIP applications</li>
+<li>readme.txt: add reference to the SW tools needed to run each application</li>
+<li>fix issue of handling Ethernet Rx DMA descriptors (the application don’t give the Rx descriptors ownership to DMA if it fails to allocate memory for a received packet)</li>
+<li>LwIP applications based on FreeRTOS: fix Ethernet reception deadlock issue, it was due to unavailable RX descriptors owned by DMA caused when receiving many frames with the same interrupt</li>
+<li>LWIP_TCP_Echo_Client application clean up: remove the unnecessary call of memp_free() in tcp_echoclient_connect() function of tcp_echoclient.c file</li>
+</ul></li>
+<li><strong>STemWin</strong> applications Update
+<ul>
+<li>Update all STemWin applications following the use of new version V5.28 (update path and files names and miscellaneous update in the application sources)</li>
+<li>Update touch process in all applications, use different timer instead of SysTick for the BSP_Background task</li>
+<li>Add “stm32f2xx_hal_flash_ex.c” file in project tree for EWARM workspace</li>
+</ul></li>
+<li><strong>USB_HOST</strong> applications Update
+<ul>
+<li>Update the value of stack and heap in all workspaces</li>
+<li>Remove vbus_sensing_enable from USBH_LL_Init()</li>
+<li>Following latest update in USB Host Library V3.2.2; in all RTOS based application, “usbh_conf.h” file has been added as follows: #if (USBH_USE_OS == 1) #include “cmsis_os.h” #define USBH_PROCESS_PRIO osPriorityNormal #define USBH_PROCESS_STACK_SIZE (8 * configMINIMAL_STACK_SIZE) #endif</li>
+</ul></li>
+<li><strong>HID_Standalone</strong> application
+<ul>
+<li>In “usbd_conf.c” file: add a delay in connection callback to avoid connection issue when using old mouse</li>
+</ul></li>
+<li><strong>USB_DEVICE</strong> applications Update
+<ul>
+<li>Update the value of stack and heap in all workspaces</li>
+<li>Following latest change in HAL V1.1.0, add “stm32f2xx_hal_pcd_ex.c” file in the files list of all projects</li>
+<li>Update done in all applications
+<ul>
+<li>All the processes using PCD handle are moved to” usbd_conf.c”</li>
+<li>Align with latest change in HAL Delay management: remove SysTick IT priority setting and set instead TICK_INT_PRIORITY to 0 in “stm32f2xx_hal_conf.h”</li>
+<li>Use device unique number to compute the USB serial number string descriptor</li>
+<li>In “main.c” file : when calling USBD_RegisterClass() function use USBD_XXX_CLASS instead &amp;USBD_XXX (XXX refer to the name of Class)</li>
+</ul></li>
+</ul></li>
+<li><strong>HID_Standalone</strong> application
+<ul>
+<li>Move EXTI callback function to “usbd_conf.c” file</li>
+<li>In MspInit() function; remove wakeup line configuration, since it’s done in latest version of HAL V1.1.0 drivers</li>
+</ul></li>
+<li><strong>AUDIO_Standalone</strong> application
+<ul>
+<li>Add LED initialization after SystemClock_Config() function</li>
+<li>Uses the buffer size in byte instead of half-word when calling the BSP_AUDIO_OUT_Play() function</li>
+</ul></li>
+</ul></li>
+<li><strong>Examples</strong>
+<ul>
+<li>Add the support System Workbench for STM32 (SW4STM32) toolchain</li>
+<li>All projects updated following changes in latest version of HAL and Middlewares</li>
+<li>Add 29 new Examples:
+<ul>
+<li>ADC_InjectedConversion_Interrupt</li>
+<li>ADC_RegularConversion_DMA</li>
+<li>ADC_RegularConversion_Interrupt</li>
+<li>ADC_TripleModeInterleaved</li>
+<li>CAN_LoopBack</li>
+<li>CRYP_AES_DMA</li>
+<li>CRYP_TDES_DMA</li>
+<li>DCMI_SnapshotMode</li>
+<li>DMA_FIFOMode</li>
+<li>HAL_TimeBase</li>
+<li>HASH_HMAC_SHA1MD5</li>
+<li>PWR_BOR</li>
+<li>PWR_PVD</li>
+<li>RTC_Alarm</li>
+<li>RTC_TimeStamp</li>
+<li>SMARTCARD_T0</li>
+<li>TIM_6Steps</li>
+<li>TIM_7PWMOutput</li>
+<li>TIM_CascadeSynchro</li>
+<li>TIM_ComplementarySignals</li>
+<li>TIM_DMABurst</li>
+<li>TIM_Encoder</li>
+<li>TIM_ExtTriggerSynchro</li>
+<li>TIM_InputCapture</li>
+<li>TIM_OCActive</li>
+<li>TIM_OCInactive</li>
+<li>TIM_OCToggle</li>
+<li>TIM_ParallelSynchro</li>
+<li>UART_Hyperterminal_IT</li>
+</ul></li>
+<li>Common update for all Examples
+<ul>
+<li>Update EWARM startup file for all projects to cope with compiler enhancement of the V7.x version</li>
+<li>Update “stm32f2xx_hal_conf.h” to be in line with HAL V1.1.0: add new defines LSI_VALUE, LSE_VALUE and TICK_INT_PRIORITY</li>
+<li>Update “stm32f2xx_it.c”: add the include of “main.h” before the “stm32f2xx_it.h”, in order to provide access to CMSIS device file via “stm32f2xx_hal.h”</li>
+<li>Miscellaneous source code comments update</li>
+<li>Force initialization of all PPP Init structure’s field before calling HAL_PPP_Init() API</li>
+</ul></li>
+<li>CRYP examples: update to initialize the new filed ‘Instance’</li>
+<li>ADC_TriggerMode: update to set ADC_EOC_SEQ_CONV value instead of ENABLE as EOCSelection parameter</li>
+<li>BSP Example: remove the call of BSP_EEPROM_WaitEepromStandbyState() function, it’s not useful to be called by the application code (now it’s declared as static function within the EEPROM BSP driver)</li>
+<li>FLASH_EraseProgram:
+<ul>
+<li>Add a note about the need to flush the data and/or instruction cache after Sector Erase operation, if they was previously enabled</li>
+<li>Update to reset data and instruction cash memories after flash erase</li>
+</ul></li>
+<li>CORTEXM_ModePrivilege: add ISB instruction to flush the pipeline after MSR instruction to modify CONTROL register</li>
+<li>I2S_Audio
+<ul>
+<li>Retrieve audio data from a storage unit (Internal Flash for Instance) through an explicit GetData method. Can be easily adapted to use data from any storage unit (USB, uSD…)</li>
+<li>Use an elastic buffer to manage double buffer mechanism using the DMA circular mode and the half and complete transfer callbacks</li>
+<li>Use the buffer size in byte instead of half-word when calling the BSP_AUDIO_OUT_Play() function</li>
+<li>Miscellaneous update</li>
+</ul></li>
+<li>UART_HyperTerminal_DMA
+<ul>
+<li>update following the change done in UART driver to fix the DMA transmit process (the code has been updated to avoid waiting on TC flag under DMA ISR, UART TC interrupt is used instead):</li>
+<li>in stm32f2xx_hal_msp.c file, configure and enable the USART IRQ in HAL_UART_MspInit() function</li>
+<li>In stm32f2xx_it.c file, USARTx_IRQHandler() function: add a call to HAL_UART_IRQHandler() function</li>
+<li>Add display on the Hyperterminal of the actions that need to be done by user</li>
+</ul></li>
+<li>PWR_STANDBY
+<ul>
+<li>Update to avoid configuring the RTC each time the device resumes from Standby mode, since the RTC configuration is kept in Standby mode.</li>
+<li>Add safety wake up sequence by following errata sheet recommendation</li>
+<li>Add enable backup domain before clearing RTC flags</li>
+</ul></li>
+<li>PWR_CurrentConsumption: update following latest change in HAL V1.2.0
+<ul>
+<li>SleepMode_Measure(): add HAL_SuspendTick() function before entering in Sleep mode and add HAL_ResumeTick() after exit from this mode</li>
+<li>StandbyMode_Measure(), StandbyRTCMode_Measure() and StandbyRTCBKPSRAMMode_Measure(): update STANDBY mode entry sequence as follows:
+<ul>
+<li>Disable all used wakeup sources</li>
+<li>Clear all related wakeup flags</li>
+<li>Re-enable all used wakeup sources</li>
+<li>Enter the standby mode</li>
+</ul></li>
+<li>Update to call the BSP_PB_Init() function outside the waiting loop</li>
+</ul></li>
+<li>RCC_ClockConfig
+<ul>
+<li>In main.c file : add the default HSI calibration value “RCC_OscInitStruct.HSICalibrationValue = 0x10;” in function SystemClockHSI_Config()</li>
+</ul></li>
+<li>TIM_PWMInput: change the name of example from “TIM_PWMIntput” to “TIM_PWMInput”<br />
+</li>
+<li>TIM_TimeBase:
+<ul>
+<li>In main.c file: initializes the LEDs before using them</li>
+<li>In main.c file: remove the following duplicated line “uwPrescalerValue = (uint32_t)((SystemCoreClock /2)/10000)-1;”</li>
+</ul></li>
+<li>Miscellaneous update on BSP, MPU and RTC Tamper examples</li>
+</ul></li>
+<li><strong>Templates</strong>
+<ul>
+<li>Add the support System Workbench for STM32 (SW4STM32) toolchain</li>
+<li>Update EWARM startup file to cope with compiler enhancement of the V7.x version</li>
+<li>Update “stm32f2xx_hal_conf.h” to be in line with HAL V1.2.0: add new defines LSI_VALUE, LSE_VALUE and TICK_INT_PRIORITY</li>
+<li>Update “stm32f2xx_it.c” : add the include of “main.h” before the “stm32f2xx_it.h”, in order to provide access to CMSIS device file via “stm32f2xx_hal.h”</li>
+<li>Miscellaneous source code comments update</li>
+</ul></li>
+</ul>
+<h2 id="contents-5">Contents</h2>
+<h3 id="projects-5">Projects</h3>
+<table>
+<caption>Projects STM322xG_EVAL</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM322xG_EVAL</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.1.0</strong></td>
+<td style="text-align: center;">Projects/STM322xG_EVAL/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM322xG_EVAL</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.1.0</strong></td>
+<td style="text-align: center;">Projects/STM322xG_EVAL/Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM322xG_EVAL</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.1.0</strong></td>
+<td style="text-align: center;">Projects/STM322xG_EVAL/Templates</td>
+</tr>
+</tbody>
+</table>
+<p>Note: in the tables above, project categories <strong>highlighted</strong> have changed since previous release.</p>
+<h2 id="known-limitations-7">Known Limitations</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-7">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain v7.40.1</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain v5.16</li>
+<li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) toolchain v5.3.1</li>
+<li>System Workbench for STM32 (SW4STM32) toolchain V1.3.0 + ST-Link</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards-7">Supported Devices and EVAL boards</h2>
+<ul>
+<li>STM32F217xx/215xx/207xx/205xx devices and STM322xG_EVAL board RevC</li>
+</ul>
+<h2 id="backward-compatibility-7">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies-7">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section1000" aria-hidden="true"> <label for="collapse-section1000" aria-hidden="true"><strong>V1.1.0 / 13-March-2014</strong></label>
+<div>
+<h1 id="maintenance-release-13">Maintenance release</h1>
+<h2 id="main-changes-13">Main Changes</h2>
+<ul>
+<li>No changes compared to previous version (V1.0.0).</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section0000" aria-hidden="true"> <label for="collapse-section0000" aria-hidden="true"><strong>V1.0.0 / 07-March-2014</strong></label>
+<div>
+<h1 id="maintenance-release-14">Maintenance release</h1>
+<h2 id="main-changes-14">Main Changes</h2>
+<ul>
+<li><strong>First official release of STM32CubeF2 (STM32Cube for STM32F2 Series)</strong></li>
+</ul>
+<p><strong>STM322xG_EVAL</strong>: First official release</p>
+<h2 id="contents-6">Contents</h2>
+<h3 id="projects-6">Projects</h3>
+<table>
+<caption>Projects NUCLEO-F072RB</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM322xG_EVAL</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/STM322xG_EVAL/Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM322xG_EVAL</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/STM322xG_EVAL/Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM322xG_EVAL</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;"><strong>V1.0.0</strong></td>
+<td style="text-align: center;">Projects/STM322xG_EVAL/Templates</td>
+</tr>
+</tbody>
+</table>
+<p>Note: in the tables above, project categories <strong>highlighted</strong> have changed since previous release.</p>
+<h2 id="known-limitations-8">Known Limitations</h2>
+<ul>
+<li>TrueSTUDIO projects are not provided for a few Applications</li>
+<li>The LCD ili9320 mounted on previous versions of the STM322xG_EVAL board will be supported in a future version of the STM32Cube F2 FW package (V1.1.0)</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-8">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V6.70.2 + ST-Link</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM toolchain v4.73)</li>
+<li>Atollic TrueSTUDIO STM32 (TrueSTUDIO) tool</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards-8">Supported Devices and EVAL boards</h2>
+<ul>
+<li>STM32F217xx/215xx/207xx/205xx devices and STM322xG_EVAL board</li>
+</ul>
+<h2 id="backward-compatibility-8">Backward Compatibility</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2 id="dependencies-8">Dependencies</h2>
+<ul>
+<li>None</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<footer class="sticky">
+<p>For complete documentation on <mark>STM32 Microcontrollers</mark> , visit: <span style="font-color: blue;"><a href="http://www.st.com/STM32">www.st.com</a></span></p>
+<p>This release note uses up to date web standards and, for this reason, should not be opened with Internet Explorer but preferably with popular browsers such as Google Chrome, Mozilla Firefox, Opera or Microsoft Edge.</p>
+</footer>
+</body>
+</html>

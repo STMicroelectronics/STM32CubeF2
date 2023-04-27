@@ -9,13 +9,12 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2017 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2017 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   @endverbatim
@@ -94,7 +93,7 @@ AES 192, AES 256, Triple DES, MD5, SHA-1, RNG
     - mbedTLS/SSL_Server/Src/main.c                         Main program
     - mbedTLS/SSL_Server/Src/ssl_server.c                   SSL Server main thread
     - mbedTLS/SSL_Server/Src/ethernetif.c                   Interfacing the LwIP stack to ETH driver
-    - mbedTLS/SSL_Client/Src/hardware_rng.c                 Random number genration using the HW RNG API.
+    - mbedTLS/SSL_Client/Src/hardware_rng.c                 Random number generation using the HW RNG API.
     - mbedTLS/SSL_Server/Src/stm32f2xx_hal_msp.c            HAL MSP module
     - mbedTLS/SSL_Server/Src/stm32f2xx_it.c                 Interrupt handlers
     - mbedTLS/SSL_Client/Src/stm32f2xx_hal_timebase_tim.c   HAL time base functions
@@ -144,7 +143,7 @@ In order to make the program work, you must do the following :
 	      in the file "stm32f2xx_hal_conf.h"
 
 	    4 The HTML response may differ depending on the encryption method used between the server
-	      and the client, this is highly depending on the mbedTLS configutation.
+	      and the client, this is highly depending on the mbedTLS configuration.
 
- * <h3><center>&copy; COPYRIGHT STMicroelectronics</center></h3>
+
  */

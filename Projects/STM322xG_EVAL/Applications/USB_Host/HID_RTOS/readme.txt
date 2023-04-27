@@ -9,13 +9,12 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2017 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2017 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   @endverbatim
@@ -95,7 +94,7 @@ the RTOS is enabled by setting, #define USBH_USE_OS      1
   - USB_Host/HID_RTOS/Src/menu.c                  HID State Machine
   - USB_Host/HID_RTOS/Src/usbh_conf.c             General low level driver configuration
   - USB_Host/HID_RTOS/Src/mouse.c                 HID mouse functions file
-  - USB_Host/HID_RTOS/Src/keybaord.c              HID keyboard functions file
+  - USB_Host/HID_RTOS/Src/keyboard.c              HID keyboard functions file
   - USB_Host/HID_RTOS/Inc/main.h                  Main program header file
   - USB_Host/HID_RTOS/Inc/stm32f2xx_it.h          Interrupt handlers header file
   - USB_Host/HID_RTOS/Inc/lcd_log_conf.h          LCD log configuration file
@@ -129,5 +128,5 @@ In order to make the program work, you must do the following :
    - STM322xG-EVAL_USBH-FS: to configure the project for STM32F2xx devices using USB OTG FS peripheral
  - Run the application
  
- * <h3><center>&copy; COPYRIGHT STMicroelectronics</center></h3>
+
  */
