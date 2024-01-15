@@ -6,3 +6,11 @@
 	path = Drivers/CMSIS/Device/ST/STM32F2xx
 	url = https://github.com/STMicroelectronics/cmsis_device_f2.git
 	branch = master
+[submodule "Drivers/BSP/STM32F2xx_Nucleo_144"]
+	path = Drivers/BSP/STM32F2xx_Nucleo_144
+	url = https://github.com/STMicroelectronics/stm32f2xx-nucleo-144-bsp.git
+	branch = main
+[submodule "Drivers/BSP/STM322xG_EVAL"]
+	path = Drivers/BSP/STM322xG_EVAL
+	url = https://github.com/STMicroelectronics/stm322xg-eval-bsp.git
+	branch = main
