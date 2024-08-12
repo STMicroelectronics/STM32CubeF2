@@ -62,7 +62,7 @@ This later is calling the HAL_SPI_MspInit()function which core is implementing
 the configuration of the needed SPI resources according to the used hardware (CLOCK & 
 GPIO). You may update this function to change SPI configuration.
 
-The SPI peripheral is configured in full duplex mode with baudrate = FCPU/16. 
+The SPI peripheral is configured in full duplex mode with baudrate = FCPU/128. 
                        
 In Master board, when the user button is pressed (used for only synchronization at startup)
 these steps are executed: 

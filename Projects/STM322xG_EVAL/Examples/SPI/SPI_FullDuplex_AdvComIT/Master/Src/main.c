@@ -98,7 +98,7 @@ int main(void)
   /*##-1- Configure the SPI peripheral #######################################*/
   /* Set the SPI parameters */
   SpiHandle.Instance               = SPIx;
-  SpiHandle.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_16;
+  SpiHandle.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_128;
   SpiHandle.Init.Direction         = SPI_DIRECTION_2LINES;
   SpiHandle.Init.CLKPhase          = SPI_PHASE_2EDGE;
   SpiHandle.Init.CLKPolarity       = SPI_POLARITY_LOW;

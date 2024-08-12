@@ -39,6 +39,8 @@
 ; Cortex-M version
 ;
 
+__initial_spTop EQU    0x20000400        ; stack used for SystemInit & SystemInit_ExtMemCtl
+
         MODULE  ?cstartup
 
         ;; Forward declaration of sections.
@@ -52,7 +54,7 @@
 
         DATA
 __vector_table
-        DCD     sfe(CSTACK)
+        DCD     __initial_spTop           ; Use internal RAM for stack for calling SystemInit
         DCD     Reset_Handler             ; Reset Handler
 
         DCD     NMI_Handler               ; NMI Handler
@@ -164,6 +166,8 @@ Reset_Handler
 
         LDR     R0, =SystemInit
         BLX     R0
+        LDR     R0, =sfe(CSTACK)          ; restore original stack pointer
+        MSR     MSP, R0
         LDR     R0, =__iar_program_start
         BX      R0
 
