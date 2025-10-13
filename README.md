@@ -25,7 +25,7 @@ The **STM32CubeF2 MCU Package** projects are directly running on the STM32F2 ser
 > * `./Middlewares/ST/STM32_Audio`
 > * `./Middlewares/ST/STemWin`
 > 
-> If needed, they can be found inside the full firmware package available on our website `st.com` and downloadable from [here](https://www.st.com/content/st_com/en/products/embedded-software/mcu-mpu-embedded-software/stm32-embedded-software/stm32cube-mcu-mpu-packages/stm32cubef2.html#get-software). You will be prompted to login, or to register in case you have no account.
+> If needed, they can be found inside the full firmware package available on our website `st.com` and downloadable from [here](https://www.st.com/en/embedded-software/stm32cubef2.html#get-software). You will be prompted to login, or to register in case you have no account.
 
 ## Release note
 
